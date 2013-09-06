@@ -9,7 +9,7 @@ tags:
 - flash
 - games
 - portfolio
-thumbnail: assets/2007-12-15-seed/thumbnail.png
+thumbnail: /assets/2007-12-15-seed/thumbnail.png
 ---
 
 <object width="800" height="450">
