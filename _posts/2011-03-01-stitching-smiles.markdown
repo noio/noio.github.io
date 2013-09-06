@@ -40,7 +40,7 @@ The state-of-the-art methods for image segmentation use a method called _minimum
 
 As a final touch we apply a tiny bit of blending to the edges. We applied the procedure to a set that includes the two pictures at the beginning of the post plus two more images and the result is shown below.
 
-[![The resulting image: everyone is smiling!](/assets/2011-03-01-stitching-smiles/final-stitched-01-600x348.png)](/assets/2011-03-01-stitching-smiles/final-stitched-01.png)
+[![The resulting image: everyone is smiling!](/assets/2011-03-01-stitching-smiles/final-stitched-01.png)](/assets/2011-03-01-stitching-smiles/final-stitched-01.png)
 
 
 #### Conclusion
