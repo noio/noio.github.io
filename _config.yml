@@ -1,0 +1,5 @@
+name: noio
+markdown: redcarpet
+pygments: true
+permalink: /:year/:month/:title/
+assets_dir: assets

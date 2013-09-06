@@ -1,0 +1,62 @@
+---
+comments: true
+date: 2007-12-15 00:28:10+00:00
+layout: post
+slug: seed
+title: Seed
+tags:
+- coding
+- flash
+- games
+- portfolio
+thumbnail: assets/2007-12-15-seed/thumbnail.png
+---
+
+<object width="800" height="450">
+    <param name="movie" value="/assets/2007-12-15-seed/seed-mochi-12.swf">
+    <!-- <embed src="/assets/2007-12-15-seed/seed-mochi-12.swf" width="800" height="450"> -->
+    <!-- </embed> -->
+</object>
+
+###### First Versions
+
+This is a Flash game that I programmed over a long period in 2007. It started out as an experiment in using bitmapData objects to store graphics, in stead of leaving all the (slow) vector graphics on the screen. In the first version I experimented with a system that I could use to draw vectors _behind_ other vectors in the bitmap. The application of this was that I could draw a flower, starting with the inner petals, and add more petals behind that. In experimenting with the flowers, I soon realized that there were many different factors influencing their look. <!-- more --> At this point I thought of making the project into some kind of screensaver. I had separated some of the variables for the looks of the flower from the rest of the program, so creating a nice looking species was easy. I planned om somehow drawing a couple of branches, then spawning the flowers, and repeating this process. The flowers would fade into the background to create an ever growing forest.
+
+
+###### The DNA
+
+At this point it occurred to me that the variables for different flowers could easily be averaged, creating the cross-breed of two flowers. From here the analogy to real DNA and flowers gave the rest of the ideas. I started making the screensaver into some kind of game. The first problem I encountered was that I couldn't manage to draw the branches of the flowers procedurally, in a good looking fashion. I experimented with textures and lighting, but I didn't get it right. In the end I found out how to interpolate positions on bezier curves, and I used that in combination with the varying branch widths, to create the growing behavior. 
+
+
+###### Interface
+
+The earlier interfaces of the game had a lot more options in it, one even had an option to switch to 'expert mode'. In the game world there were physical seeds, that you could manipulate. Seeds could be planted, but also spliced with other flowers or seeds. In the end this system required too much buttons, because context-sensitivity did not give enough options. For example: when a seed was lying on the ground, and it was clicked, should it be picked up or planted? In the end a simple drag and drop system turned out to give enough options. Also, the game was actually never meant to be able to process flower strings, it could only generate a toString() of the property array, for bug-fixing purposes. But when people gave me the string saying "this is a cool flower", I wrote a module to parse the string and put it back into an array. 
+
+
+###### Credits
+
+I should credit [Mei-li Nieuwland](http://liea.deviantart.com) for drawing the beautiful loading screen and thumbnail images. It's the face of the game, and I'm glad that it looks this good. Also, I want to thank Andrew Lam, my roommate, for paying attention to my babbling while I was programming..
+
+
+###### Mirrors
+
+	
+  * [Seed on deviantArt](http://n-dr01d.deviantart.com/art/seed-69663347)
+
+
+	
+  * [Seed on Newgrounds](http://www.newgrounds.com/portal/view/415930)
+
+
+	
+  * [Seed on Addictinggames](http://www.addictinggames.com/seed.html)
+
+
+	
+  * [Seed Downloadable Package](http://noio.nl/wordpress/wp-content/uploads/seed-package.zip)
+
+
+
+
+
+
