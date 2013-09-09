@@ -1,0 +1,5 @@
+Syntax highlighting
+Galleries
+Front page scrolling
+Optimize HTML/CSS
+Post headers

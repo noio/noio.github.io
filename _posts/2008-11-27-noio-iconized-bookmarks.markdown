@@ -13,17 +13,17 @@ tags:
 As promised, I am releasing a plugin to help manage favicons in WordPress blogrolls. The plugin is still in an early stage, but it works fine for this site. If there is interest, I will polish it and add functions. I might eventually even add it to the WordPress plugin store if that is needed. The plugin has three features.
 
 
-#### List bookmarks with favicons
+### List bookmarks with favicons
 
 Upon activation there is a function available that works just like WordPress' built-in `wp_list_bookmarks`. The function is called `list_iconized_bookmarks()`, and it takes the same arguments as the original. The function takes images from the _link_image_ field of each link. The images are displayed in front of the link, with `class="favicon"`, and it is up to the user to define a proper style.
 
 
-#### Iconized Links Widget
+### Iconized Links Widget
 
 There is also a replacement Links widget available, to get iconized bookmarks into your blogroll. This widget has one option, which is the arguments string, with the same [arguments](http://codex.wordpress.org/Template_Tags/wp_list_bookmarks) that are passed to `wp_list_bookmarks`. 
 
 
-#### Iconizing
+### Iconizing
 
 Iconizing might be a bit of a stupid name, but what this function does is add favicon-URLs to each of your links' image fields! So you can just add a bunch of links to your blogroll, then run the plugin, and all favicons will be correctly set. You can start the plugin from the N.I.B. (Noio Iconized Bookmarks) panel in the settings screen. It allows you to define a default favicon, for when the real favicon cannot be found or doesn't exist. It also allows you to define a specific word that will 'lock' the favicon if you put it in the _Notes_ field of a link. Suppose you want to set another icon for a website, and you don't want N.I.B. to overwrite your custom icon when you run an update. Then you just put this locking word in the link's notes, and N.I.B. won't change the icon. 
 

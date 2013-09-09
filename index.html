@@ -3,14 +3,53 @@ layout: default
 title: noio
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
+<div class="landing">
+  
+  <h1 class="logo"><a href="/">noio</a></h1>
+
+  <div class="card">
+    <strong class="accent dark">Hiya,</strong>
+    <p><em>noio</em> is the web home of</p>
+    <h2 class="accent">Thomas van den Berg</h2>
+    <address>
+      <a href="mailto:thomas@noio.nl" target="_blank">&lt;thomas@noio.nl&gt;</a>
+    </address>
+  </div>
+  
+  <div class="intro">
+    <div class="top">
+    <p>
+      <!-- I like doing what I do way more than talking about it, so I’ll keep the intro short. Have a look around the site, you’ll find all sorts of stuff like:  -->
+      Fuck the blah-blah, this is what I do:
+    </p>
+    </div>
+    <div class="bottom">
+      <p class="tags">
+      {% for tag in site.tags %}
+      <span style="opacity: {{ tag | last | size | divided_by: 5.0 | plus: 0.3 }}">
+        <a href='/#{{ tag | first | replace:' ','-' }}'>{{ tag | first }}</a>{% unless forloop.last %},{% endunless %}
+      </span>
+      {% endfor %}
+      </p>
+      <!-- <button>Scroll down</button> -->
+    </div>
+  </div>
+</div>
+
+<div class="site">
+    <ul class="posts">
     {% for post in site.posts %}
-    	{% if post.thumbnail %}
-    	<img src="{{post.thumbnail}}">
-    	{% endif %}
-      	<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    	<li>
+    		<a href="{{ post.url }}">
+    		{% if post.thumbnail %}
+    			<img src="{{post.thumbnail}}"/>
+    		{% else %}
+    			<img src="css/nothumb.png"/>
+    		{% endif %}
+    		<!-- <span>{{ post.date | date_to_string }}</span>  -->
+    		<div class='title'><span>{{ post.title }}</span></div>
+    		</a>
+    	</li>
     {% endfor %}
   </ul>
 </div>

@@ -1,9 +1,16 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
-
 <div class="post">
-{{ content }}
+<h1 class="logo"><a href="/">noio</a><span>{{page.title}}</span></h1> 
+<div class="site">
+
+	<div class="content">
+
+	<!-- <p class="meta">{{ page.date | date_to_string }}</p> -->
+	
+	{{ content }}
+
+	</div>
+</div>
 </div>

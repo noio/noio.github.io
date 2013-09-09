@@ -31,7 +31,8 @@ The problem is that not all websites use the same method. Some have easy locatio
 The best solution to a problem like this is letting someone else do the job. Google has an undocumented feature to retrieve the favicon for a certain link. I discovered this on some [recent blog posts](http://www.gtricks.com/2008/09/google-s2-share-stuff-and-also-favicon.html). This seems ideal, all you would have to do is create an image, and set the source to Google's url.
 
 {% highlight html %}
-<img src="http://www.google.com/s2/favicons?domain=www.famfamfam.com"></img>
+<img src="http://www.google.com/s2/favicons?domain=famfamfam.com">
+</img>
 {% endhighlight %}
 
 
