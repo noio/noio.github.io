@@ -162,8 +162,12 @@ a:hover   { color: #353535; }
   line-height: 2;
 }
 .intro p {
-  width: 680px;
-  margin: 0em 80px;
+  max-width: 680px;
+  margin: 0 80px;
+}
+
+.intro .bottom p {
+  margin: 0em 80px 0 240px; 
 }
 
 .intro .top{
@@ -174,6 +178,7 @@ a:hover   { color: #353535; }
   position: relative;
   background-color: white;
   width: 100%;
+  padding-bottom: 12px;
 }
 
 .intro .bottom.fixed{
@@ -190,10 +195,17 @@ a:hover   { color: #353535; }
 }
 .intro .tags a {
   color: #333;
+  padding: 3px;
 }
 
 .intro .tags a:hover{
   color: #258ee7;
+}
+
+.intro .tags a.active {
+  background: black;
+  color: white;
+  opacity: 1 !important;
 }
 
 .intro button {
@@ -206,6 +218,7 @@ a:hover   { color: #353535; }
   overflow: hidden; /* Clearfix! */
   zoom: 1;  /* Triggering "hasLayout" in IE */
   z-index: 10;
+  min-height: 100%;
 }
 
 

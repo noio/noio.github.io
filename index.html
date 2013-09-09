@@ -19,8 +19,8 @@ title: noio
   <div class="intro">
     <div class="top">
     <p>
-      <!-- I like doing what I do way more than talking about it, so I’ll keep the intro short. Have a look around the site, you’ll find all sorts of stuff like:  -->
-      Fuck the blah-blah, this is what I do:
+      I like doing what I do way more than talking about it, so I’ll keep the intro short. Have a look around the site, you’ll find all sorts of stuff like: 
+      <!-- No blah-blah here, this is what I do: -->
     </p>
     </div>
     <div class="bottom">
@@ -40,6 +40,9 @@ title: noio
     <ul class="posts">
     {% for post in site.posts %}
     	<li>
+        {% for tag in post.tags %}
+          <meta name="tags" content="{{tag | replace:' ','-'}}"/>
+        {% endfor %}
     		<a href="{{ post.url }}">
     		{% if post.thumbnail %}
     			<img src="{{post.thumbnail}}"/>

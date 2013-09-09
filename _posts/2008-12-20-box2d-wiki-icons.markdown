@@ -10,7 +10,6 @@ tags:
 - portfolio
 ---
 
-![Box2D Wiki Icons thumbnail](/assets/2008-12-20-box2d-wiki-icons/box2dicons.png)
-
+* ![Box2D Wiki Icons thumbnail](/assets/2008-12-20-box2d-wiki-icons/box2dicons.png)
 
 This small icon set was created for the [Box2D Wiki](http://www.box2d.org/wiki/index.php?title=Main_Page) to aid navigation. 
