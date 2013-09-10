@@ -8,6 +8,7 @@ thumbnail: /assets/2008-12-20-box2d-wiki-icons/thumbnail.png
 tags:
 - design
 - portfolio
+- icons
 ---
 
 * ![Box2D Wiki Icons thumbnail](/assets/2008-12-20-box2d-wiki-icons/box2dicons.png)
