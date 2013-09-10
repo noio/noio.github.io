@@ -1,5 +1,6 @@
 Syntax highlighting
-Galleries
+x Galleries
 Front page scrolling
 Optimize HTML/CSS
-Post headers
+x Post headers
+Meta in post header

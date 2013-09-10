@@ -313,3 +313,7 @@ ul.posts span{
 .post pre code {
   border: none;
 }
+
+.post #disqus_thread {
+  width: 680px;
+}
