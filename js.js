@@ -1,10 +1,7 @@
 function showtag(tag){
-	var dtag = tag.replace('-',' ');
-	var a = $('.tags a.tag-'+dtag);
+	var a = $('.tags a.tag-'+tag);
 	$('.tags a.active').removeClass('active');
 	a.addClass('active');
-	var tag = a.attr('href').split('#')[1];
-	console.log(tag);
 	$('.posts li').hide()
 	$('meta[name="tags"][content='+tag+']').parent().show();
 
