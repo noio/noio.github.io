@@ -1,6 +1,6 @@
 function showtag(tag){
 	var dtag = tag.replace('-',' ');
-	var a = $('.tags a:contains('+dtag+')');
+	var a = $('.tags a.tag-'+dtag);
 	$('.tags a.active').removeClass('active');
 	a.addClass('active');
 	var tag = a.attr('href').split('#')[1];
