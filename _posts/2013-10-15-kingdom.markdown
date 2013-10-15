@@ -1,0 +1,25 @@
+---
+comments: true
+date: 2013-10-15 23:22:10+01:00
+layout: post
+slug: kingdom
+title: Kingdom
+tags:
+- flash
+- games
+- portfolio
+thumbnail: /assets/2013-10-15-kingdom/thumbnail.png
+---
+
+<object width="864" height="480">
+    <param name="movie" value="/assets/2013-10-15-kingdom/kingdom.swf">
+    <param name="allowfullscreen" value="true" />
+</object>
+
+This game was built to look nice and pixely. I'm releasing the source code and assets on [GitHub](https://github.com/noio/kingdom). Some of the sprites are shown below, feel free take them to build a better game than I did ;).
+
+![](/assets/2013-10-15-kingdom/cobblestones.png)
+![](/assets/2013-10-15-kingdom/farmer.png)
+![](/assets/2013-10-15-kingdom/walls.png)
+![](/assets/2013-10-15-kingdom/treeline.png)
+

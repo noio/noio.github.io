@@ -290,7 +290,7 @@ ul.posts span{
 }
 
 .post p img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .post pre {
@@ -314,5 +314,6 @@ ul.posts span{
 }
 
 .post #disqus_thread {
+  margin: 40px 0 0 0;
   width: 680px;
 }

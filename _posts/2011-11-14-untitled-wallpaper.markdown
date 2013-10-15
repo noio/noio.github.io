@@ -14,4 +14,4 @@ tags:
 
 * ![](/assets/2011-11-14-untitled-wallpaper/mist-op-het-ij.png)
 
-I usually don't upload photos or wallpapers, but here you go. I just made [the 1440x900 version ](/assets/2011-11-14-untitled-wallpaper/mist-op-het-ij.png)for my MacBook, but leave a comment if you'd like to have another size.
+I usually don't upload photos or wallpapers, but here you go. I just made [the 1440x900 version](/assets/2011-11-14-untitled-wallpaper/mist-op-het-ij.png)for my MacBook, but leave a comment if you'd like to have another size.
