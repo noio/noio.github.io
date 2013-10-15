@@ -70,4 +70,7 @@ $(document).ready(function(){
 		}
 		ul.find(':first').hide().fadeIn(200);
 	});
+
+	// SHOW DATE LINE DIVIDERS
+	
 })

@@ -49,10 +49,11 @@ title: noio
     		{% else %}
     			<img src="css/nothumb.png"/>
     		{% endif %}
-    		<!-- <span>{{ post.date | date_to_string }}</span>  -->
-    		<div class='title'><span>{{ post.title }}</span></div>
-    		</a>
+        <div class='title'><span>{{ post.title }}</span></div>
+        </a>
+    		<!-- <span class='date'>{{ post.date | date: "%b %Y" }}</span>  -->
     	</li>
+
     {% endfor %}
   </ul>
 </div>

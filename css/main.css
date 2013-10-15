@@ -231,12 +231,13 @@ ul.posts li {
   /*border: 1px solid #ddd;*/
 }
 
+
 .nothumb {
   width: 320px; height: 240px;
   background: #222;
 }
 
-ul.posts span{
+ul.posts .title span{
   /*display: block;*/
   float: right;
   font-size: 120%;
@@ -246,7 +247,12 @@ ul.posts span{
   top: -53px; left: -10px;
   background: rgba(255,255,255,0.9);
 }
-
+/*
+ul.posts span.date{
+  position: relative;
+  top: -30px;
+  left: 320px;
+}*/
 
 
 /*****************************************************************************/
