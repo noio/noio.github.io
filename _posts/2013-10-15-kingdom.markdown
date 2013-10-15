@@ -16,7 +16,7 @@ thumbnail: /assets/2013-10-15-kingdom/thumbnail.png
     <param name="allowfullscreen" value="true" />
 </object>
 
-This game was built to look nice and pixely. I'm releasing the source code and assets on [GitHub](https://github.com/noio/kingdom). Some of the sprites are shown below, feel free take them to build a better game than I did ;).
+This game was built to look nice and pixely. I will release the source code and assets on GitHub in a few days, examples below.
 
 ![](/assets/2013-10-15-kingdom/cobblestones.png)
 ![](/assets/2013-10-15-kingdom/farmer.png)
