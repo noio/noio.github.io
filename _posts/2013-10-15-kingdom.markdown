@@ -15,7 +15,7 @@ thumbnail: /assets/2013-10-15-kingdom/thumbnail.png
 <object type="application/x-shockwave-flash" data="/assets/2013-10-15-kingdom/kingdom.swf" width="864" height="480" >
     <param name="movie" value="/assets/2013-10-15-kingdom/kingdom.swf">
     <param name="allowfullscreen" value="true" />
-    <embed src="/assets/2013-10-15-kingdom/kingdom.swf" quality="high" />
+    <embed src="/assets/2013-10-15-kingdom/kingdom.swf" width="865" height="480" quality="high" />
 </object>
 
 This game was built to look nice and pixely. I have released the source code and assets on [GitHub](http://github.com/noio/kingdom). You could use the sprites and animations to make a better game than I did ;). They are located in [/assets/gfx](https://github.com/noio/kingdom/tree/master/assets/gfx), including the samples shown below.
