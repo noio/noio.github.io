@@ -1,4 +1,4 @@
-function showtag(tag){
+function showtag(tag, pushState){
 	var a = $('.tags a.tag-'+tag);
 	$('.tags a.active').removeClass('active');
 	a.addClass('active');
@@ -7,14 +7,32 @@ function showtag(tag){
 
 	var h = $(window).height();
 	var bh = $('.bottom').first().outerHeight();
-	$(window).scrollTop(h - bh);
+	$(document.body).animate({scrollTop: (h - bh)}, 500);
+	// window.location.hash = tag; // for older browsers, leaves a # behind
+
+	document.title = 'noio: #' + tag;
+
+	if (pushState){
+		history.pushState(tag, document.title, '#' + tag); // nice and clean
+	}
 }
 
-function notag(){
+function notag(pushState){
 	$('.tags a.active').removeClass('active');
 	$('.posts li').show()
 	// window.location.hash = ''; // for older browsers, leaves a # behind
-    // history.pushState('', document.title, window.location.pathname); // nice and clean
+	if (pushState){
+	    history.pushState('', document.title, window.location.pathname); // nice and clean
+	}
+}
+
+function tagfromhash(){
+	if (window.location.hash){
+		tag = window.location.hash.substring(1);
+		showtag(tag);
+	} else {
+		notag();
+	}
 }
 
 
@@ -41,20 +59,20 @@ $(document).ready(function(){
 	});
 
 	// SELECT POSTS ON TAG CLICK
-	if (window.location.hash){
-		tag = window.location.hash.substring(1);
-		showtag(tag);
-	}
+	tagfromhash();
 	$('.tags a').on('click', function(e){
 		var a = $(e.target);
 		if (! a.hasClass('active')){
 			var tag = a.attr('href').split('#')[1];
-			showtag(tag);
+			showtag(tag, true);
 		} else {
-			notag()
+			notag(true)
 		}
 	    return false;
 	});
+	window.onpopstate = function(e){
+		tagfromhash();
+	}
 
 	// INITIALIZE IMAGE GALLERIES
 	$('.post ul:has(li:nth-child(2):has(img))').addClass('imlist');
