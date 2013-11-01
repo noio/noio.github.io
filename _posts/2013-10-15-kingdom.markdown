@@ -5,6 +5,7 @@ layout: post
 slug: kingdom
 title: Kingdom
 tags:
+- kingdom
 - flash
 - games
 - portfolio
