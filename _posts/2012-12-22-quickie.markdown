@@ -7,7 +7,6 @@ title: Quickie
 thumbnail: /assets/2012-12-22-quickie/thumbnail.png
 tags:
 - illustration
-- art
 ---
 
 * ![](/assets/2012-12-22-quickie/tankie.png)

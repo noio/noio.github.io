@@ -26,9 +26,7 @@ title: noio
     <div class="bottom">
       <p class="tags">
       {% for tag in site.tags %}
-      <span style="opacity: {{ tag | last | size | divided_by: 5.0 | plus: 0.3 }}">
-        <a href='/#{{ tag | first | replace:' ','-' }}' class='tag-{{ tag | first | replace:' ','-' }}'>{{ tag | first }}</a>{% unless forloop.last %},{% endunless %}
-      </span>
+        <a  style="opacity: {{ tag | last | size | divided_by: 8.0 | plus: 0.25 }}" href='/#{{ tag | first | replace:' ','-' }}' class='tag-{{ tag | first | replace:' ','-' }}'>{{ tag | first }}</a>{% unless forloop.last %},{% endunless %}
       {% endfor %}
       </p>
       <!-- <button>Scroll down</button> -->

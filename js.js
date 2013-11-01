@@ -1,19 +1,23 @@
 function showtag(tag, pushState){
 	var a = $('.tags a.tag-'+tag);
-	$('.tags a.active').removeClass('active');
-	a.addClass('active');
-	$('.posts li').hide()
-	$('meta[name="tags"][content='+tag+']').parent().show();
+	if(a.length){
+		$('.tags a.active').removeClass('active');
+		a.addClass('active');
+		$('.posts li').hide()
+		$('meta[name="tags"][content='+tag+']').parent().show();
 
-	var h = $(window).height();
-	var bh = $('.bottom').first().outerHeight();
-	$(document.body).animate({scrollTop: (h - bh)}, 500);
-	// window.location.hash = tag; // for older browsers, leaves a # behind
+		var h = $(window).height();
+		var bh = $('.bottom').first().outerHeight();
+		$(document.body).animate({scrollTop: (h - bh)}, 300);
+		// window.location.hash = tag; // for older browsers, leaves a # behind
 
-	document.title = 'noio: #' + tag;
+		document.title = 'noio: #' + tag;
 
-	if (pushState){
-		history.pushState(tag, document.title, '#' + tag); // nice and clean
+		if (pushState){
+			history.pushState(null, '', '#' + tag); // nice and clean
+		}
+	} else {
+		history.replaceState(null, '', window.location.pathname); // nice and clean
 	}
 }
 
@@ -22,7 +26,7 @@ function notag(pushState){
 	$('.posts li').show()
 	// window.location.hash = ''; // for older browsers, leaves a # behind
 	if (pushState){
-	    history.pushState('', document.title, window.location.pathname); // nice and clean
+	    history.pushState(null, '', window.location.pathname); // nice and clean
 	}
 }
 

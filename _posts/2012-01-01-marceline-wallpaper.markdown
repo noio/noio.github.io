@@ -6,7 +6,6 @@ slug: marceline-wallpaper
 title: Marceline Wallpaper
 thumbnail: /assets/2012-01-01-marceline-wallpaper/thumbnail.png
 tags:
-- art
 - illustration
 - wallpaper
 ---

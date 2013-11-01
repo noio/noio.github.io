@@ -6,7 +6,6 @@ slug: the-end-of-a-day
 title: The End of a Day
 thumbnail: /assets/2011-06-17-the-end-of-a-day/thumbnail.png
 tags:
-- art
 - illustration
 - portfolio
 ---

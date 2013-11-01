@@ -208,6 +208,7 @@ a:hover   { color: #353535; }
 .intro .tags a.active {
   background: black;
   color: white;
+  opacity: 1 !important;
 }
 
 .intro button {
