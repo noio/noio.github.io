@@ -21,7 +21,9 @@ function notag(){
 $(document).ready(function(){
 
 	// SET RANDOM COLOR FOR ACCENTS
-	window.colors = ['blue', 'red'];  //, 'green', 'teal', 'pink', 'orange'];
+	// window.colors = ['blue', 'red'];  //, 'green', 'teal', 'pink', 'orange'];
+	window.colors = ['turquoise', 'emerald', 'peterriver', 'amethyst', 'wetasphalt', 'sunflower', 'carrot', 'alizarin'];
+
 	var color = window.colors[Math.floor(Math.random()*window.colors.length)];
 	$('.accent').addClass(color);
 
