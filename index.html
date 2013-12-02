@@ -15,6 +15,11 @@ title: noio
       <a href="mailto:thomas@noio.nl" target="_blank">&lt;thomas@noio.nl&gt;</a>
     </address>
   </div>
+
+  <div class="scrollhint">
+    scroll
+    <span>&#x25BC;</span>
+  </div>
   
   <div class="intro">
     <div class="top">
@@ -26,7 +31,7 @@ title: noio
     <div class="bottom">
       <p class="tags">
       {% for tag in site.tags %}
-        <a  style="opacity: {{ tag | last | size | divided_by: 8.0 | plus: 0.25 }}" href='/#{{ tag | first | replace:' ','-' }}' class='tag-{{ tag | first | replace:' ','-' }}'>{{ tag | first }}</a>{% unless forloop.last %},{% endunless %}
+        <a  style="opacity: {{ tag | last | size | divided_by: 10.0 | plus: 0.4 }}" href='/#{{ tag | first | replace:' ','-' }}' class='tag-{{ tag | first | replace:' ','-' }}'>{{ tag | first }}</a>{% unless forloop.last %},{% endunless %}
       {% endfor %}
       </p>
       <!-- <button>Scroll down</button> -->

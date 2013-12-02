@@ -49,9 +49,24 @@ $(document).ready(function(){
 	var color = window.colors[Math.floor(Math.random()*window.colors.length)];
 	$('.accent').addClass(color);
 
+	// FADE IN THE SCROLL HINT
+	$('.scrollhint').hide();
+	window.scrollhintTimeout = setTimeout(function(){
+		$('.scrollhint').fadeIn(2000);
+	}, 4000);
+
 
 	// FIX HEADER ON SCROLL
 	$(window).on('scroll', function(){
+		// Delete the scroll hint
+		if (window.pageYOffset > 0 && window.scrollhintTimeout){
+			console.log(window.pageYOffset)
+			clearTimeout(window.scrollhintTimeout);
+			console.log(window.scrollhintTimeout)
+			window.scrollhintTimeout = null;
+			$('.scrollhint').fadeOut()
+		}
+		// Fix the header
 		var y = window.pageYOffset || document.documentElement.scrollTop;
 		var h = $(window).height();
 		var bh = $('.bottom').first().outerHeight();
