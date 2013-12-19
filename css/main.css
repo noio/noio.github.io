@@ -344,6 +344,10 @@ ul.posts span.date{
   border: none;
 }
 
+.post .related {
+  margin: 80px 0 0 0;
+}
+
 .post .related li {
   display: inline-block;
   font-size: 120%;
@@ -353,7 +357,12 @@ ul.posts span.date{
   display: inline-block;
   padding: 0em 0.4em;
   top: -53px; left: -10px;
-  background: #eee;
+  color: #65b8ff;
+  text-shadow: 1px 1px 4px black;
+  background-position: center;
+}
+.post .related li a:hover{
+  color:white;
 }
 
 .post #disqus_thread {

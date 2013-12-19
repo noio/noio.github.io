@@ -5,3 +5,4 @@ permalink: /:year/:month/:title/
 assets_dir: assets
 description: stuff that noio does
 url: http://www.noio.nl
+future: false

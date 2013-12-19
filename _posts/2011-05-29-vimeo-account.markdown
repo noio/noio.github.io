@@ -4,6 +4,7 @@ date: 2011-05-29 16:50:00+00:00
 layout: post
 slug: vimeo-account
 title: Vimeo Account and More
+thumbnail: /assets/2011-05-29-vimeo-account/thumbnail.png
 tags:
 - pixelart
 - games
