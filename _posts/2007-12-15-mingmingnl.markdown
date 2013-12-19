@@ -6,7 +6,7 @@ slug: mingmingnl
 thumbnail: assets/2007-12-15-mingmingnl/thumbnail.png
 title: Mingming.nl
 tags:
-- coding
+- web development
 - portfolio
 ---
 

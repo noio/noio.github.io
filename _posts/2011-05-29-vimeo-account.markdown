@@ -5,9 +5,8 @@ layout: post
 slug: vimeo-account
 title: Vimeo Account and More
 tags:
-- games
 - pixelart
-- video
+- games
 ---
 
 So I created a Vimeo account and I wanted to show off some of my progress in pixelarting backgrounds for a game I'm working on. Enjoy!

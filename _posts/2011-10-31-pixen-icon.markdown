@@ -6,8 +6,8 @@ slug: pixen-icon
 title: Pixen Icon
 thumbnail: /assets/2011-10-31-pixen-icon/thumbnail.png
 tags:
-- design
 - icons
+- design
 - portfolio
 ---
 

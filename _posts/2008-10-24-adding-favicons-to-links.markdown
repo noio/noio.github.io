@@ -5,11 +5,8 @@ date: 2008-10-24 16:51:19+00:00
 layout: post
 slug: adding-favicons-to-links
 title: Adding favicons to links
-wordpress_id: 111
-categories:
-- blog
 tags:
-- coding
+- wordpress
 - javascript
 ---
 

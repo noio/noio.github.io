@@ -5,7 +5,6 @@ layout: post
 slug: version-one-of-nib
 title: Version One of N.I.B.
 tags:
-- plugin
 - wordpress
 ---
 

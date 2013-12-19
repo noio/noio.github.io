@@ -5,9 +5,8 @@ layout: post
 slug: seed
 title: Seed
 tags:
-- coding
-- flash
 - games
+- flash
 - portfolio
 thumbnail: /assets/2007-12-15-seed/thumbnail.png
 ---

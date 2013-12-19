@@ -6,7 +6,7 @@ slug: karelnieuwlandarchitekten-nl
 title: kna.nl
 thumbnail: /assets/2009-06-20-karelnieuwlandarchitekten-nl/thumbnail.png
 tags:
-- coding
+- web development
 - design
 - flash
 - portfolio

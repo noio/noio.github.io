@@ -6,7 +6,7 @@ slug: noio-argon-theme
 title: Noio Argon Theme
 thumbnail: /assets/2010-12-12-noio-argon-theme/thumbnail.png
 tags:
-- coding
+- web development
 - design
 - portfolio
 - wordpress

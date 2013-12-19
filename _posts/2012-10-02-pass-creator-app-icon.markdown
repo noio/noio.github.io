@@ -6,9 +6,9 @@ slug: pass-creator-app-icon
 title: Pass Creator App Icon
 thumbnail: /assets/2012-10-02-pass-creator-app-icon/thumbnail.png
 tags:
-- app
-- design
 - icons
+- design
+- app
 - portfolio
 ---
 

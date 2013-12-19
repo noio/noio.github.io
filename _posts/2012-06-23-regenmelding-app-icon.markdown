@@ -6,9 +6,9 @@ slug: regenmelding-app-icon
 title: Regenmelding App Icon
 thumbnail: /assets/2012-06-23-regenmelding-app-icon/thumbnail.png
 tags:
+- icons
 - app
 - design
-- icons
 - portfolio
 ---
 

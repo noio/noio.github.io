@@ -5,8 +5,6 @@ layout: post
 slug: noio-iconized-bookmarks
 title: Noio Iconized Bookmarks
 tags:
-- coding
-- plugin
 - wordpress
 ---
 
