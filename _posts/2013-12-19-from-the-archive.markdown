@@ -18,9 +18,9 @@ screenshots and movies to remind me what they actually look like. I'll share thr
 ![](/assets/2013-12-19-from-the-archive/adam.gif)
 
 These are some typical Dutch houses that I thought would make a nice scenery. They are 
-actually procedurally generated and colored based on predefined blocks.  I have no 
+actually procedurally generated and colored based on prefab blocks.  I have no 
 idea where to go with this. Most of the "tech" (e.g. the reflections) made it into 
-[Kingdom]({% post_url 2013-10-15-kingdom %}). I even did a little GVB tram.
+[Kingdom](/2013/10/kingdom). And I even did a little GVB tram.
 
 ![](/assets/2013-12-19-from-the-archive/tram.png)
 
