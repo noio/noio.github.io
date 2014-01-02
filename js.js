@@ -42,6 +42,7 @@ function tagfromhash(){
 
 $(document).ready(function(){
 
+
 	// SET RANDOM COLOR FOR ACCENTS
 	// window.colors = ['blue', 'red'];  //, 'green', 'teal', 'pink', 'orange'];
 	window.colors = ['turquoise', 'emerald', 'peterriver', 'amethyst', 'wetasphalt', 'sunflower', 'carrot', 'alizarin'];
@@ -60,9 +61,7 @@ $(document).ready(function(){
 	$(window).on('scroll', function(){
 		// Delete the scroll hint
 		if (window.pageYOffset > 0 && window.scrollhintTimeout){
-			console.log(window.pageYOffset)
 			clearTimeout(window.scrollhintTimeout);
-			console.log(window.scrollhintTimeout)
 			window.scrollhintTimeout = null;
 			$('.scrollhint').fadeOut()
 		}
@@ -78,7 +77,9 @@ $(document).ready(function(){
 	});
 
 	// SELECT POSTS ON TAG CLICK
-	tagfromhash();
+	if ($('.tags').length){
+		tagfromhash();
+	}
 	$('.tags a').on('click', function(e){
 		var a = $(e.target);
 		if (! a.hasClass('active')){
@@ -99,10 +100,7 @@ $(document).ready(function(){
 	$('.imlist li img').on('click', function(event){
 		var li = $(event.currentTarget).parent();
 		var ul = li.parent();
-		console.log(li);
-		console.log(ul);
 		var idx = li.index();
-		console.log(idx);
 		ul.append(ul.find(':first'));
 		if (idx > 0){
 			ul.prepend(li);
