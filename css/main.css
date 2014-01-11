@@ -459,4 +459,14 @@ ul.posts span.date{
     float: none;
     margin: 10px auto;
   }
+
+  .imlist {
+    padding: 0;
+  }
+  .imlist li{
+    margin: 0;
+  }
+  .imlist li img {
+    max-width: 100% !important;
+  }
 }
