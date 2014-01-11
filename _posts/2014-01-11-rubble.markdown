@@ -1,0 +1,27 @@
+---
+comments: true
+date: 2014-01-11 20:00:00+01:00
+layout: post
+slug: rubble
+title: Rubble
+tags:
+- games
+- flash
+thumbnail: /assets/2014-01-11-rubble/thumbnail.png
+---
+
+<object type="application/x-shockwave-flash" data="/assets/2014-01-11-rubble/rubble.swf" width="900" height="420" >
+    <param name="movie" value="/assets/2014-01-11-rubble/rubble.swf">
+    <param name="allowfullscreen" value="true" />
+    <embed src="/assets/2014-01-11-rubble/rubble.swf" width="900" height="420" quality="high" />
+</object>
+
+This is game that I built in 2007/2008 experimenting with Box2D. I realized that I'm never going to finish this game in the 
+current form, and physics platformers are not as new as they were 5 years ago anyway. So it's better off up here for you to play than
+on my harddrive. 
+
+You play a brain-in-a-tank that's been deactivated awaiting permanent disassembly. However, you're 
+awakened by the charming major as a new threat appears. There was supposed to be a fifth level where you fight the alien mothership, using airdropped artillery cannons, but alas.
+
+**WARNING**: It's unfinished, buggy, and it'll never be fixed. But I hope you enjoy anyway ;).
+
