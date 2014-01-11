@@ -16,7 +16,7 @@ thumbnail: /assets/2014-01-11-rubble/thumbnail.png
     <embed src="/assets/2014-01-11-rubble/rubble.swf" width="900" height="420" quality="high" />
 </object>
 
-This is game that I built in 2007/2008 experimenting with Box2D. I realized that I'm never going to finish this game in the 
+This is game that I built and almost completed in 2007/2008 experimenting with Box2D. I realized that I'm never going to finish this game in the 
 current form, and physics platformers are not as new as they were 5 years ago anyway. So it's better off up here for you to play than
 on my harddrive. 
 
