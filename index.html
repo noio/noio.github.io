@@ -10,7 +10,7 @@ title: noio
   <div class="card">
     <strong class="accent ">Hiya,</strong>
     <p><em>noio</em> is the web home of</p>
-    <h2 class="accent dark">Thomas van den Berg</h2>
+    <h2 class="accent dark"><span>Thomas&nbsp;</span><span>van den Berg</span></h2>
     <address>
       <a href="mailto:thomas@noio.nl" target="_blank">&lt;thomas@noio.nl&gt;</a>
     </address>
@@ -31,10 +31,9 @@ title: noio
     <div class="bottom">
       <p class="tags">
       {% for tag in site.tags %}
-        <a  style="opacity: {{ tag | last | size | divided_by: 10.0 | plus: 0.4 }}" href='/#{{ tag | first | replace:' ','-' }}' class='tag-{{ tag | first | replace:' ','-' }}'>{{ tag | first }}</a>{% unless forloop.last %},{% endunless %}
+        <a  href='/#{{ tag | first | replace:' ','-' }}' class='tag-{{ tag | first | replace:' ','-' }} {% if tag.last.size < 3 %}few{% elsif tag.last.size < 5 %}some{% else %}many{% endif %}'>{{ tag | first }},</a>
       {% endfor %}
       </p>
-      <!-- <button>Scroll down</button> -->
     </div>
   </div>
 </div>

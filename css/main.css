@@ -95,6 +95,10 @@ a:hover   { color: #353535; }
   background: url('logo.png') no-repeat;
   /*margin: 20px 80px;*/
 }
+.landing {
+  position: relative;
+  overflow: auto;
+}
 .landing .logo {
   z-index: 20;
   position: fixed;
@@ -117,7 +121,7 @@ a:hover   { color: #353535; }
 }
 
 .card {
-  width: 380px; height: 210px;
+  width: 380px;
   margin: -160px -220px;
   padding: 20px 30px;
   position: absolute; top: 50%; left: 50%;
@@ -145,14 +149,20 @@ a:hover   { color: #353535; }
 }
 
 .card h2 {
-  position: absolute; top: 114px;
   font-size: 32px;
   letter-spacing: -0.5pt;
-  margin: -20px 0 0;
+  margin: 0;
+  line-height: 1.0em;
+}
+
+.card h2 span{
+  display: block; 
+  float: left;
 }
 
 .card address {
-  margin: 45px 0;
+  clear: both;
+  margin: 45px 0 20px;
   text-align: center;
 }
 .card address a {
@@ -188,7 +198,7 @@ a:hover   { color: #353535; }
   margin: 0 80px;
 }
 
-.intro .bottom p {
+.tags {
   max-width: 900px;
   margin: 0em 80px 0 240px; 
 }
@@ -200,7 +210,7 @@ a:hover   { color: #353535; }
 .intro .bottom {
   position: relative;
   background-color: white;
-  width: 100%; height: 96px;
+  width: 100%; min-height: 96px;
   padding-bottom: 12px;
   box-shadow: 0 8px rgba(255, 255, 255, 0.6);
 }
@@ -211,27 +221,31 @@ a:hover   { color: #353535; }
   z-index: 10;
 }
 
-.intro .tags a {
+.tags a {
   color: #333;
   padding: 3px;
 }
 
-.intro .tags a:hover{
+.tags a.some {
+  opacity: 0.8;
+}
+
+.tags a.few {
+  opacity: 0.5;
+}
+
+.tags a:hover{
   color: #258ee7;
 }
 
-.intro .tags a.active {
+.tags a.active {
   background: black;
   color: white;
   opacity: 1 !important;
 }
 
-.intro button {
-  width: 100%;
-}
-
 .site {
-  padding: 0px 80px 50px 80px;
+  padding: 0px 40px 50px 80px;
   background-color: white;
   overflow: hidden; /* Clearfix! */
   zoom: 1;  /* Triggering "hasLayout" in IE */
@@ -240,28 +254,27 @@ a:hover   { color: #353535; }
 }
 
 
-ul.posts {
+.posts {
   list-style-type: none;
   margin-bottom: 2em;
   text-align: center;
 }
 
-ul.posts li {
+.posts li {
   float: left;
   display: inline-block;
   width: 320px; height: 240px;
   margin: 20px 40px 20px 0;
   text-align: left;
+  overflow: hidden;
   /*border: 1px solid #ddd;*/
 }
 
-
-.nothumb {
-  width: 320px; height: 240px;
-  background: #222;
+.posts li img {
+  width: 100%;
 }
 
-ul.posts .title span{
+.posts .title span{
   /*display: block;*/
   float: right;
   font-size: 120%;
@@ -288,11 +301,11 @@ ul.posts span.date{
 /* standard */
 .post p {
   text-align: justify;
-  width: 680px;
+  max-width: 680px;
 }
 
 .post .highlight {
-  width: 680px;
+  max-width: 680px;
 }
 
 .post pre {
@@ -367,5 +380,83 @@ ul.posts span.date{
 
 .post #disqus_thread {
   margin: 40px 0 0 0;
-  width: 680px;
+  max-width: 680px;
+}
+
+/*****************************************************************************/
+/*
+/* <= 2 Columns (compress site)
+/*
+/*****************************************************************************/
+
+@media screen and (max-width:859px) {
+  .logo { margin-left: 40px; }
+
+  .site{
+    padding-right: 20px;
+    padding-left: 40px;
+  }
+
+  .tags {
+    margin-left: 200px;
+  }
+
+  .posts li {
+    margin: 20px 20px 20px 0;
+  }
+
+}
+
+/*****************************************************************************/
+/*
+/* 1 Column
+/*
+/*****************************************************************************/
+
+@media screen and (max-width:740px) {
+  .intro .top {
+    display:none;
+  }
+
+  .logo { margin-left: 5px; }
+  .landing {height: 500px;} 
+  .landing .logo { position: static; }
+
+  .card {
+    width: 100%;
+    margin: 0px 0px;
+    position: relative; top: 0; left: 0;
+    box-sizing: border-box;
+  }
+  .card strong{
+    display: none;
+  }
+  .card h2 {
+    position: static;
+  }
+  .intro {
+    position: absolute;
+    /*margin: 0px 30px 0;*/
+  }
+  .intro .bottom.fixed, .intro .bottom{
+    position: static;
+    min-height: 0;
+  }
+  .tags {
+    margin: 0 20px;
+  }
+  .tags .few, .tags .some{
+    display: none;
+  }
+  
+  .site{
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .posts li {
+    width: 300px; height: 225px;
+    float: none;
+    margin: 10px auto;
+  }
 }

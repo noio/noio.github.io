@@ -8,7 +8,8 @@ function showtag(tag, pushState){
 
 		var h = $(window).height();
 		var bh = $('.bottom').first().outerHeight();
-		$(document.body).animate({scrollTop: (h - bh)}, 300);
+		var target = $('.bottom').offset().top;
+		$(document.body).animate({scrollTop: target}, 300);
 		// window.location.hash = tag; // for older browsers, leaves a # behind
 
 		document.title = 'noio: #' + tag;
@@ -65,14 +66,16 @@ $(document).ready(function(){
 			window.scrollhintTimeout = null;
 			$('.scrollhint').fadeOut()
 		}
-		// Fix the header
-		var y = window.pageYOffset || document.documentElement.scrollTop;
-		var h = $(window).height();
-		var bh = $('.bottom').first().outerHeight();
-		if (y > h - bh){
-			$('.bottom').addClass('fixed');
-		} else {
-			$('.bottom').removeClass('fixed');
+		if ($('.bottom:visible').length){
+			// Fix the header
+			var y = window.pageYOffset || document.documentElement.scrollTop;
+			var h = $(window).height();
+			var bh = $('.bottom').first().outerHeight();
+			if (y > h - bh){
+				$('.bottom').addClass('fixed');
+			} else {
+				$('.bottom').removeClass('fixed');
+			}
 		}
 	});
 
