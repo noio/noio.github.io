@@ -9,7 +9,7 @@ function showtag(tag, pushState){
 		var h = $(window).height();
 		var bh = $('.bottom').first().outerHeight();
 		var target = $('.bottom').offset().top;
-		$(document.body).animate({scrollTop: target}, 300);
+		$('html,body').animate({scrollTop: target}, 300);
 		// window.location.hash = tag; // for older browsers, leaves a # behind
 
 		document.title = 'noio: #' + tag;
