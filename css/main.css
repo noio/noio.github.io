@@ -306,6 +306,13 @@ ul.posts span.date{
   max-width: 680px;
 }
 
+.post hr {
+  max-width: 680px;
+  height: 1px;
+  background-color: #333;
+  border: none;
+}
+
 .post .highlight {
   max-width: 680px;
 }
