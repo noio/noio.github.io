@@ -1,0 +1,15 @@
+---
+comments: true
+date: 2014-07-13 15:00:00+00:00
+layout: post
+slug: playful-arts-aftermovie
+title: Playful Arts Aftermovie
+thumbnail: /assets/2014-07-13-playful-arts-aftermovie/thumbnail.png
+tags:
+- games
+- dropstuff
+---
+
+Work on Kingdom has been a little slow the past few weeks because I built and displayed a public space game—[SLOW](http://forums.tigsource.com/index.php?topic=40663)—at the [Playful Arts Festival](http://playfulartsfestival.com/) in Den Bosch. 
+
+<iframe src="//player.vimeo.com/video/99232832?portrait=0&amp;color=65b8ff" width="700" height="393" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
