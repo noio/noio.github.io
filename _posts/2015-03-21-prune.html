@@ -131,7 +131,8 @@ tags:
 			</div>
 		</div>
 
-		<p>A little experiment. <strong>Drag and release to clip.</strong> I built a kind of depth-based outline shader (pixelart SSAO!) for Kingdom, but I ended up not using it. Press <strong>space</strong> to see where it's applied.</p>
+		<p>Built with Unity, so you need the plugin and allow it to run. <strong>Drag and release to clip.</strong>.</p>
 
-		<p>Built with Unity, so you need the plugin and allow it to run.</p>
+		<p>For Kingdom, I built a depth-based outline shader. It is similar in a sense to SSAO because it uses the depth buffer (though not the normals) to compute
+		pixels that are inside a 'fold', and make them darker. Somewhat like Unity's built-in "Crease Shading", except it does not create drop shadows if the depth difference is too high, i.e. it will not shade the sky/background. We ended up not using this for Kingdom though.</p>
 
