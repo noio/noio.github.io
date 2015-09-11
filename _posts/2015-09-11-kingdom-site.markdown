@@ -13,4 +13,4 @@ tags:
 * ![Queen Box Art](/assets/2015-09-11-kingdom-site/boxart_queen.png)
 * ![King Box Art](/assets/2015-09-11-kingdom-site/boxart_king.png)
 
-Here's a quick note to those of you coming here looking for info on the game's progress. Check out the [Kingdom website at www.kingdomthegame.com](www.kingdomthegame.com). And check out [Kelly's tumblr](http://beatfist.tumblr.com) who did our amazing box art.
+Here's a quick note to those of you coming here looking for info on the game's progress. Check out the [Kingdom website at www.kingdomthegame.com](http://www.kingdomthegame.com). And check out [Kelly's tumblr](http://beatfist.tumblr.com) who did our amazing box art.
