@@ -19,6 +19,10 @@ thumbnail: /assets/2013-10-15-kingdom/thumbnail.png
     <embed src="/assets/2013-10-15-kingdom/kingdom.swf" width="865" height="480" quality="high" />
 </object>
 
+This is the original **Kingdom Flash game** released in 2013. It's still a lot of fun but we've since polished it and expanded this into a real game.
+
+## [Get the full game on Steam!](http://store.steampowered.com/app/368230)
+
 A very minimal strategy game that encourages you to stop and enjoy the scenery every now and then. I should thank [PEZ (soundcloud)](http://soundcloud.com/pez_pez) for the perfect music, go check it out.
 
 I have released the source code and assets on [GitHub](http://github.com/noio/kingdom). You could use the sprites and animations to build an entirely different game. They are located in [/assets/gfx](https://github.com/noio/kingdom/tree/master/assets/gfx), including the samples shown below.
