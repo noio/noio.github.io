@@ -1,5 +1,5 @@
 name: noio
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 permalink: /:year/:month/:title/
 assets_dir: assets
