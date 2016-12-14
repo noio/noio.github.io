@@ -1,6 +1,6 @@
 name: noio
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 permalink: /:year/:month/:title/
 assets_dir: assets
 description: stuff that noio does
