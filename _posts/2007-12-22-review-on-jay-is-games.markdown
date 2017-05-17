@@ -3,7 +3,7 @@ comments: true
 date: 2007-12-22 16:19:59+00:00
 layout: post
 slug: review-on-jay-is-games
-title: Game review on Jay is Games
+title: Seed reviewed on Jay is Games
 tags:
 - flash
 - games

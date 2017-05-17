@@ -4,3 +4,7 @@ x Front page scrolling
 Optimize HTML/CSS
 x Post headers
 Meta in post header
+
+x move tags to the right
+x center container
+x prose on main page
