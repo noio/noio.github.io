@@ -6,10 +6,10 @@ function showtag(tag, pushState){
 		$('.posts li').hide()
 		$('meta[name="tags"][content='+tag+']').parent().show();
 
-		var h = $(window).height();
-		var bh = $('.bottom').first().outerHeight();
-		var target = $('.bottom').offset().top;
-		$('html,body').animate({scrollTop: target}, 300);
+		// var h = $(window).height();
+		// var bh = $('.bottom').first().outerHeight();
+		// var target = $('.bottom').offset().top;
+		// $('html,body').animate({scrollTop: target}, 300);
 		// window.location.hash = tag; // for older browsers, leaves a # behind
 
 		document.title = 'noio: #' + tag;
