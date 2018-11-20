@@ -64,5 +64,5 @@ I used **Unity 2018.2**, which uses **PhysX 3.3.3** under the hood.
 
 ## Next post
 
-In a next post (if it happens 😂) I'll start with making everything worse by introducing some circumstances that would occur in an actual (imaginary) game, such as boxes that are not perfectly stacked, or boxes that are made up of multiple box colliders. Then I'll try to find strategies for mitigating those circumstances.
+I did some more experiments with boxes with compound colliders and a different method of stacking them in [the next post](/2018/11/stacking-more-boxes/)
 
