@@ -8,6 +8,7 @@ tags:
 - games
 - flash
 thumbnail: /assets/2014-01-11-rubble/thumbnail.png
+typora-root-url: ..
 ---
 
 <object type="application/x-shockwave-flash" data="/assets/2014-01-11-rubble/rubble.swf" width="900" height="420" >

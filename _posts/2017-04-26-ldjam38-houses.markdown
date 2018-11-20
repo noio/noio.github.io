@@ -10,6 +10,7 @@ tags:
 - game jam
 - pixelart
 - games
+typora-root-url: ..
 ---
 
 * ![Gameplay GIF](/assets/2017-04-26-ldjam38-houses/gameplay.gif)

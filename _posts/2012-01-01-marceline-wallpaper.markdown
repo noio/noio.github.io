@@ -8,6 +8,7 @@ thumbnail: /assets/2012-01-01-marceline-wallpaper/thumbnail.png
 tags:
 - illustration
 - wallpaper
+typora-root-url: ..
 ---
 
 * [![](/assets/2012-01-01-marceline-wallpaper/marceline_1920x1080.png)](/assets/2012-01-01-marceline-wallpaper/marceline_1920x1080.png)

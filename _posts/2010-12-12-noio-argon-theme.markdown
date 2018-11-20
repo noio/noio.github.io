@@ -10,6 +10,7 @@ tags:
 - design
 - portfolio
 - wordpress
+typora-root-url: ..
 ---
 
   * ![](/assets/2010-12-12-noio-argon-theme/noio-argon-01.png)

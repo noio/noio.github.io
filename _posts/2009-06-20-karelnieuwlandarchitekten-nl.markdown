@@ -10,6 +10,7 @@ tags:
 - design
 - flash
 - portfolio
+typora-root-url: ..
 ---
 
 * ![](/assets/2009-06-20-karelnieuwlandarchitekten-nl/kna-nl-01.png)

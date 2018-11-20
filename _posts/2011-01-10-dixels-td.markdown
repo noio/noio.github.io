@@ -9,6 +9,7 @@ tags:
 - games
 - portfolio
 - starcraft2
+typora-root-url: ..
 ---
 
 Yesterday [Popobawa](http://www.sc2mapster.com/profiles/Popobawa/) and me released our map for Starcraft II, called Dixel's TD. It's a remake of a classic WCIII map of the same name. 

@@ -8,6 +8,7 @@ title: Mingming.nl
 tags:
 - web development
 - portfolio
+typora-root-url: ..
 ---
 
 * ![Screenshot](/assets/2007-12-15-mingmingnl/mingming-nl-screenshot-02.png)

@@ -8,6 +8,7 @@ thumbnail: /assets/2015-09-11-kingdom-site/thumbnail.png
 tags:
 - kingdom
 - games
+typora-root-url: ..
 ---
 
 * ![Queen Box Art](/assets/2015-09-11-kingdom-site/boxart_queen.png)

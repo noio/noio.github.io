@@ -9,6 +9,7 @@ thumbnail: /assets/2011-11-14-untitled-wallpaper/thumbnail.png
 tags:
 - photography
 - wallpaper
+typora-root-url: ..
 ---
 
 * ![](/assets/2011-11-14-untitled-wallpaper/mist-op-het-ij.png)

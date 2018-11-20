@@ -9,6 +9,7 @@ tags:
 - artificial intelligence
 - deep learning
 - openFrameworks
+typora-root-url: ..
 ---
 
 The last few months I've been working on building a small program that can track hands from a webcam feed in real-time. For this, I used Deep Neural Networks, with many thanks to [course.fast.ai](http://course.fast.ai) for getting me caught up on the subject. Getting up and running with Convolutional Neural Networks was pretty easy, as was training and getting decent accuracy with a limited training set. I kept a more detailed log in [this forum thread](http://forums.fast.ai/t/training-a-network-to-detect-hands/4917). The results below were generated frame-by-frame and then converted to a movie.

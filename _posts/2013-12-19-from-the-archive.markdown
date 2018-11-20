@@ -7,6 +7,7 @@ title: From the Archive
 tags:
 - pixelart
 thumbnail: /assets/2013-12-19-from-the-archive/thumbnail.png
+typora-root-url: ..
 ---
 
 Going through my projects folder, I came across some beginnings of games I had totally 

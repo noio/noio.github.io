@@ -8,6 +8,7 @@ tags:
 - kingdom
 - games
 thumbnail: /assets/2014-04-25-kingdom-devlog/thumbnail.png
+typora-root-url: ..
 ---
 
 Short post: I've started a [devlog for Kingdom](http://kingdom.noio.nl). Go there for some awesome WIP screens like the one below.

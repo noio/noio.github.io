@@ -7,6 +7,7 @@ title: 'Rubble: Update'
 tags:
 - flash
 - games
+typora-root-url: ..
 ---
 
 So I'm still working on a little flash game. It's a game where you play a tank and make your way through some levels where aliens will try to blow you up while you solve the physics puzzles. I thought I'd do a little update, partly for your enjoyment, partly for my motivation. To start you off, here are some screenshots.

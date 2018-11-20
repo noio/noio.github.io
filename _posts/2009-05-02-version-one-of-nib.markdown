@@ -6,6 +6,7 @@ slug: version-one-of-nib
 title: Version One of N.I.B.
 tags:
 - wordpress
+typora-root-url: ..
 ---
 
 It's been quite a while since the last update on my plugin, Noio Iconized Bookmarks, but yesterday I decided to add all the features I had been wanting to add ever since its release. 

@@ -7,6 +7,7 @@ title: Quick Sketch
 thumbnail: /assets/2012-12-22-quickie/thumbnail.png
 tags:
 - illustration
+typora-root-url: ..
 ---
 
 * ![](/assets/2012-12-22-quickie/tankie.png)

@@ -9,6 +9,7 @@ tags:
 - web development
 - design
 - portfolio
+typora-root-url: ..
 ---
 
   * ![](/assets/2010-06-01-liea-nl/liea-nl-screenshot-02.png)

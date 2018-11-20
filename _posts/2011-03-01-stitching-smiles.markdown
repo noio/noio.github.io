@@ -7,6 +7,7 @@ title: Stitching Smiles
 tags:
 - artificial intelligence
 - computer vision
+typora-root-url: ..
 ---
 
 For a project in our MSc Artificial Intelligence at the University of Amsterdam, Gilles de Hollander and me implemented a new system for automatically fixing group portraits. You are probably familiar with the situation of trying to take a good picture of a group of people, what usually happens is that not everyone is smiling at the same time, people look away, they have their eyes closed, etc. We used computer vision techniques to automatically combine a series of 'bad' group portraits into a single good one, where everybody smiles.

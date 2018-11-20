@@ -9,6 +9,7 @@ tags:
 - flash
 - portfolio
 thumbnail: /assets/2007-12-15-seed/thumbnail.png
+typora-root-url: ..
 ---
 
 <object width="800" height="450">
@@ -39,19 +40,19 @@ I should credit [Mei-li Nieuwland](http://liea.deviantart.com) for drawing the b
 
 ### Mirrors
 
-	
+
   * [Seed on deviantArt](http://n-dr01d.deviantart.com/art/seed-69663347)
 
 
-	
+​	
   * [Seed on Newgrounds](http://www.newgrounds.com/portal/view/415930)
 
 
-	
+​	
   * [Seed on Addictinggames](http://www.addictinggames.com/seed.html)
 
 
-	
+​	
   * [Seed Downloadable Package](http://noio.nl/wordpress/wp-content/uploads/seed-package.zip)
 
 

@@ -7,6 +7,7 @@ title: Kingdom for iOS
 tags:
 - kingdom
 thumbnail: /assets/2013-11-04-kingdom-for-ios/thumbnail.png
+typora-root-url: ..
 ---
 
 ![](/assets/2013-11-04-kingdom-for-ios/image.jpg)

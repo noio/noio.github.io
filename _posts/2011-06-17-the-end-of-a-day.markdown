@@ -8,6 +8,7 @@ thumbnail: /assets/2011-06-17-the-end-of-a-day/thumbnail.png
 tags:
 - illustration
 - portfolio
+typora-root-url: ..
 ---
 
 

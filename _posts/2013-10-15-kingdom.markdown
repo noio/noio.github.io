@@ -11,6 +11,7 @@ tags:
 - portfolio
 - pixelart
 thumbnail: /assets/2013-10-15-kingdom/thumbnail.png
+typora-root-url: ..
 ---
 
 <object type="application/x-shockwave-flash" data="/assets/2013-10-15-kingdom/kingdom.swf" width="864" height="480" >
