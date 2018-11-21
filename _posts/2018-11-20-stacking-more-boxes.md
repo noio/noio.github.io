@@ -43,9 +43,9 @@ The image above shows the bounce resulting from creating a stack all at once.
 
 ![one-by-one](/assets/2018-11-21-stacking-more-boxes/one-by-one.gif)
 
-This is how I was hoping to mitigate that.
+By spawning the boxes one-by-one as you see above I was hoping to reduce the bounciness.
 
-The result? Negligible difference.
+The boxes bounce less, but the overall effect on stability? Negligible.
 
 ![one-by-one-results](/assets/2018-11-21-stacking-more-boxes/one-by-one-results.png)
 
@@ -57,3 +57,4 @@ What I am coming to realize with these experiments is that aside from the number
 
 I have a good idea now of how much I should expect from the physics engine, and how much I will need to fix with more game-specific mechanisms for stabilization.
 
+Get the code at https://github.com/noio/box-stacking-stability to to run your own experiment.

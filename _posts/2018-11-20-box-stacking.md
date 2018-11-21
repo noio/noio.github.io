@@ -62,6 +62,8 @@ Of course, there are other, more thoughtful, ways to increase stability, dependi
 
 I used **Unity 2018.2**, which uses **PhysX 3.3.3** under the hood.
 
+Get the code at https://github.com/noio/box-stacking-stability to to run your own experiment.
+
 ## Next post
 
 I did some more experiments with boxes with compound colliders and a different method of stacking them in [the next post](/2018/11/stacking-more-boxes/)
