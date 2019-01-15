@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="google-site-verification" content="GczuurekKRrnQbnvMKZe8V37yWH66ZewOF86uJfN27I" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="noio" href="http://www.noio.nl/feed.xml">
+    <link rel="stylesheet" href="https://use.typekit.net/atq8emw.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="shortcut icon" href="http://www.gravatar.com/avatar/b667dff85b9fc0286902b8e6adff8b90.png?size=32" />
+    <style>
+        body {
+            max-width: 800px;
+            margin: auto;
+            font-family: 'effra', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 32px;
+            padding-bottom: 100px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .tag {
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="logo"><a href="/"><img alt="noio" src="/assets/_site/noio.png"></a></h1>
+    <div>
+        <div class="post">
+  <h1>Garbage Country Logbook 2017 Part 1</h1>
+  <h2>Week 41</h2>
+<p>Setting up a project and workspace.</p>
+<h2>Week 42</h2>
+<p>Work on synchronizing multiplayer controls. If multiple players are to live inside the same simulation, they all have to be able to affect the simulation in a deterministic way.</p>
+<ul>
+<li>[x] Mouse controls camera angle</li>
+<li>[x] Blocks respond to size</li>
+<li>[x] Blocks should be simulated on the server side</li>
+</ul>
+<h1>Week 44</h1>
+<p>Blocks can be placed in the world now, but there is no 'construction' because the blocks cannot be stacked. Need to create a mechanicsm for actually building constructions out of multiple blocks. This means stacking and snapping the blocks when they are created.</p>
+<ul>
+<li>[x] Blocks snap to nearest block</li>
+<li>[x] Being able to create ceiling supported by pillars</li>
+</ul>
+<p><img src="/assets/2019-01-15-logbook/2017-11-01%20at%2014.34.57.png" alt="image"></p>
+<p><img src="/assets/2019-01-15-logbook/2017-11-03%20at%2013.28.44.png" alt="image"></p>
+<p>The next step is to figure out how to also update the properties of the terrain (ground) in a networked &amp; physics-proof way.</p>
+<ul>
+<li>[x] Sync a terrain object between networked players.</li>
+<li>[x] Send small 'patch' updates when the terrain is modified.</li>
+</ul>
+<p>A terrain consists of a 256x256 heightmap. When a new player connects, this heightmap needs to be sent to that player. Updating the entire heightmap on each change is a waste of bandwidth. So only the updated patches are sent over the network. However, these patches also need to be processed back into the terrain for when new players connect. So it is necessary to keep a list of 'unprocessed' patches, which is also sent to each player. This list can be merged into the heightmap periodically.</p>
+<ul>
+<li>[x] Save a list of patches for new players.</li>
+</ul>
+<p>Currently, construction is made difficult because it's hard to view the world from a useful angle.</p>
+<p>Because blocks can be dynamically sized, they can't be textured in a standard way (UV coords and an image texture). Generating textures dynamically for blocks is an effective solution</p>
+<ul>
+<li>[x] Create better camera controls.</li>
+<li>[x] Generate UV coordinates and procedural textures.</li>
+</ul>
+<p><img src="/assets/2019-01-15-logbook/2017-11-04%20at%2021.24.41.png" alt="image"></p>
+<p>On an irregular terrain, the position of the player locally and on the server starts to drift. It's not immediately obvious why this happens.</p>
+<ul>
+<li>[x] Fix Position drift</li>
+<li>[x] Terrain material</li>
+</ul>
+<h2>Week 45</h2>
+<p><img src="/assets/2019-01-15-logbook/2017-11-06%20at%2017.15.43.png" alt="image"></p>
+<p>Still the biggest hurdle for building collaboratively in the world is being able to navigate it smoothly and previewing where constructed items are placed. Because the terrain is irregular now (shaped by the players), it would be beneficial if the initial items are 'fixed' into the ground.</p>
+<ul>
+<li>[x] Improve mouse controls / placement</li>
+<li>[x] Fix pillars into ground</li>
+</ul>
+<p>Pillars that are set on the ground are now anchored into the ground. However, this means that the tops are often at different heights:</p>
+<p><img src="/assets/2019-01-15-logbook/2017-11-07%20at%2014.26.29.png" alt="image"></p>
+<p>In order to be able to add a floor or ceiling on top of these pillars, they need to be dynamically <em>clipped</em> when building the floor.</p>
+<ul>
+<li>[x] Clip pillars when building a floor or ceiling.</li>
+<li>[x] Correctly compute size of ceilings.</li>
+</ul>
+<p><img src="/assets/2019-01-15-logbook/2017-11-07%20at%2016.49.12.png" alt="image"></p>
+<p>I suspect that this clipping will get really complicated and have a lot of unforeseen consequences because the world is not voxel/grid based. For now, clipping works and pillars can be built on top of other floors.</p>
+<p>Today I did a little bit of visual work on the pillars, generating a procedural texture for their dynamic size. And also adding decorations based on their size and role in the building. Pillars can register if they are &quot;supports&quot; which is important for adding additional elements. That is: if a pillar is a support, it can not be clipped so easily when adding a floor.</p>
+<p><img src="/assets/2019-01-15-logbook/2017-11-08%20at%2016.01.33.png" alt="image"></p>
+<h3>Smaller construction elements</h3>
+<p>The next step is to create more tools for players to <em>navigate</em> the world. Mostly, being able to build smaller building elements inside the block skeletons (like ladders!). These smaller elements should not interact with the bigger blocks, to save performance. The server architecture will end up something like this:</p>
+<pre><code>+--------------------+    Computes the interaction of big blocks with each other
+| LARGE SCALE SERVER |    and periodically updates the terrain tiles.
++--------------------+    Players are not present/simulated in this server.  
+  |
+  |={Position of blocks}
+  |
+  |      +-------------------------+  Computes the interaction of players with eachother,
+  |---&gt;  | PLAYER BEHAVIOUR SERVER |  the blocks, and the terrain. Blocks and terrain are
+  |      +-------------------------+  &quot;static&quot; (kinematic) in this server.
+  |          |
+  |          |={Player positions}
+  |          V
+  |      +----------------+   
+  +---&gt;  | PLAYER CLIENTS |   Handles player controls and visualisation.
+         +----------------+
+</code></pre>
+<h2>Week 46</h2>
+<p>Working on the smaller construction elements.</p>
+<ul>
+<li>[x] Create a &quot;Board&quot; entity that represents a wooden board</li>
+<li>[x] Boards can be picked up on the server side.</li>
+<li>[x] Boards can be placed by dragging the mouse to two points.</li>
+<li>[x] Board is anchored somehow to big block elements. Either a fixed joint or parenting to save physics computations.</li>
+<li>[x] Validate the placement of attached boards.</li>
+</ul>
+<p>Currently, the validation of where blocks can and cannot be placed is starting to get pretty gnarly. It was to be expected that this is much harder in a free-building game than in a voxel based game. The basic system works though, it simply prevents shapes from overlapping with each other.</p>
+<p><img src="/assets/2019-01-15-logbook/2017-11-14%20at%2018.13.06.png" alt="image">
+<img src="/assets/2019-01-15-logbook/2017-11-14%20at%2018.14.06.png" alt="image">
+<img src="/assets/2019-01-15-logbook/2017-11-14%20at%2018.14.35.png" alt="image"></p>
+<p>Today I worked on a more robust system for picking up (and placing) objects in a multiplayer game. After <a href="https://forums.improbable.io/t/player-holding-an-object-managing-authority/3287/7">some discussion</a>. I am using the following full roundtrip:</p>
+<pre><code>Player(Client)     Player(W1)          Object(W2)
+  |                   |                    | 
+  | --(CMD: Grab)-&gt;   |                    |
+  |                   | ---(CMD: Grab)-&gt;   |                
+  |                   |                    | 
+  |                   |  &lt;---- ( OK ) ---- | 
+  | &lt;---- ( OK ) ---- |                    | 
+  |                   |                    | 
+</code></pre>
+<h2>Week 47</h2>
+<p>Last week I really started running into the classic difficulty of multiplayer games: syncing object state between server and client while still maintaining a pleasant and smooth visualisation client-side. I implemented a method known as &quot;Client Side Prediction and Reconciliation&quot; for player movement. The next step is to apply this method to more complicated movement, such as through buildings or on ladders.</p>
+<p>Improved the system for placing ladders, and created a way for players to interact with those laters.</p>
+<p><img src="/assets/2019-01-15-logbook/2017-11-20%20at%2016.59.24.png" alt="image"></p>
+<p>Added dynamic simulation of overgrowing vines.</p>
+<p><img src="/assets/2019-01-15-logbook/2017-11-24%20at%2018.15.57.png" alt="image"></p>
+<h2>Week 48</h2>
+<p>A big obstacle is still the user controls. It is unclear where and how blocks will be placed when clicking the cursor.</p>
+<ul>
+<li>[x] Fix cursor positioning.</li>
+</ul>
+<p>A problem that exists currently is the that modifications need to be 'atomic'. When creating a new block on the server, other blocks are modified even <em>before</em> it has been decided whether the new block can even be placed. To fix this, instead of immediately editing other blocks when a command comes through, a list of blocks that should be modified is cached until it is certain that the command can succeed, then the cached list is processed.</p>
+<ul>
+<li>[x] Make block validation and editing atomic.</li>
+<li>[x] Don't snap blocks that extend a pillar.</li>
+</ul>
+<p>This week I also introduced stairs. On the server, stairs are simulated as a rectangular block, just like any other, only on the client do they render as stairs when a variable &quot;stairs_angle&quot; is set.</p>
+<p><img src="/assets/2019-01-15-logbook/2017-11-30%2014.56.58%20Screenshot.png" alt="image"></p>
+<p><img src="/assets/2019-01-15-logbook/2017-11-30%2015.21.45%20Screenshot.png" alt="image"></p>
+<h2>Week 49</h2>
+<p>To stabilize the physics when adding stairs (which are diagonal blocks), they probably need some supports so that they can rest &quot;flat&quot; on top of pillars.</p>
+<ul>
+<li>[x] Add stair supports</li>
+</ul>
+<p>I added some simple code for jumping: setting the velocity.y of a rigidbody. Unfortunately this turned out to be naive. The current Prediction/Reconciliation strategy is not precise enough for fast movements.</p>
+<ul>
+<li>[x] Better interpolation inside the Reconciliation algorithm</li>
+<li>[x] Check preconditions for jumping also on the client side.</li>
+</ul>
+<p>Part of this project is about introducing dynamic interactions with the terrain around the player. Now that most block construction works, it's time to focus on that a little. When buildings topple, the parts should turn into rubble, rubble falls down onto the terrain, and causes the terrain to change (i.e. the rubble forms a heap).</p>
+<ul>
+<li>Rubble should always fall down and disappear, and not stay around on top of buildings, because that will cause too many persistent objects</li>
+<li>Rubble should bounce a couple of times to knock over other blocks (creating a domino effect).</li>
+<li>When it hits the ground, it should form a heap on the heightmap.</li>
+</ul>
+<h2>Week 50</h2>
+<p>This week I want to do some prerequisite work for splitting of the &quot;large scale physics&quot; server into its own C++ program. This means much stricter management of the entity authority lifecycle.</p>
+<ul>
+<li>[x] Check for authority when destroying a block</li>
+<li>[x] Disable collisions between blocks and terrain because blocks will be simulated on a different worker</li>
+<li>[x] Destroy rubble when it falls through the world, check for authority</li>
+</ul>
+<p>A new small issue popped up: Pillars vary in height, and every time the height changes because of construction, the position also changes. If the position of pillars was set to the base point, we could save on position updates for these situations where only the height changes.</p>
+<ul>
+<li>[x] Change positioning to mean the 'base position' of objects instead of the center.</li>
+</ul>
+<p>Today: more efficient patching of terrain height, and adding the ability to actually modify the terrain <em>type</em> as well. (Adding a simulation of growing grass and debris that stays around after player buildings crumble).</p>
+<p><img src="/assets/2019-01-15-logbook/flowchart-diagram.png" alt="flowchart"></p>
+<p>Now that patches are sent as a relative height update and not as an absolute value, this becomes problematic. Sometimes a patch is processed twice because of unreliable transmission. But when a relative patch is applied twice, the terrain is changed twice. A patch with absolute values would not have this problem.</p>
+<p>This is a kind of tricky problem. Should I send the current light-weight delta updates or full heightmap values.</p>
+<p>![2017-12-14 17.07.58 Screenshot](/assets/2019-01-15-logbook/2017-12-14 17.07.58 Screenshot.png)</p>
+<p>I wrote a system that could be extended to process both light weight updates and full patches.</p>
+<h2>Week 51</h2>
+<p>In order to make sure that the world does not become cluttered with unused blocks—some automatic cleanup is desirable. This could be done by slowly decaying blocks that are not supporting any other blocks. I.e. single pillars on the ground. However, <em>detecting</em> whether a block is supporting another block is not trivial. The entity data already contains a <code>support</code> flag, but that only keeps track of the block's initial state. The blocks would have to constantly poll for a block on top, and I'm not sure if that is a good idea..</p>
+<ul>
+<li>
+<p>[x] Get rid of the <code>support</code> flag because it is always outdated anyway</p>
+</li>
+<li>
+<p>[x] Update floor placement to no longer check for the <code>support</code> flag</p>
+</li>
+<li>
+<p>[x] Let players create adjacent sections of floors instead of large floors.</p>
+</li>
+</ul>
+<p>![2017-12-18 17.14.06 Screenshot](/assets/2019-01-15-logbook/2017-12-18 17.14.06 Screenshot.png)</p>
+<h3>Fog/Athmosphere Simulation</h3>
+<p>Part of the research goal is also finding an efficient distributable way to simulate dynamic athmospherics. A fog represented as a heightmap is a good initial representation that looks good from a high angle. However, when viewed from a low angle or from inside, the illusion falls apart.</p>
+<p>![2017-12-19 at 09.44.56](/assets/2019-01-15-logbook/2017-12-19 at 09.44.56.png)</p>
+<p>![2017-12-19 09.45.11 Screenshot](/assets/2019-01-15-logbook/2017-12-19 09.45.11 Screenshot.png)</p>
+<p>![2017-12-19 at 17.00.56](/assets/2019-01-15-logbook/2017-12-19 at 17.00.56.png)</p>
+<p>Last task is doing a revamp of the vine datastruture. Storing vines position relative to the last node, instead of storing each node's position and rotation independently will save a lot of data in storage and transmission, and greatly reduce the entity count, which is advantageous for performance as well.</p>
+<h2>Week 52</h2>
+<p>The few days left in this week I dedicated to a camera system that follows the player but takes into account the shape of the player buildings and prevents obstructing the view.</p>
+<h3>Todo's for later</h3>
+<ul>
+<li>
+<p>[x] Check for collisions with a block size including a margin.</p>
+</li>
+<li>
+<p>[x] Update the positioning method to send POS+ROT in one component.</p>
+</li>
+<li>
+<p>[ ] Create new TerrainData for each tile, they currently share an asset.</p>
+</li>
+</ul>
+
+</div>
+    </div>
+</body>
+
+</html>

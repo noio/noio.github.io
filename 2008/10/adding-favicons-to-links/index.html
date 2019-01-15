@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="google-site-verification" content="GczuurekKRrnQbnvMKZe8V37yWH66ZewOF86uJfN27I" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="noio" href="http://www.noio.nl/feed.xml">
+    <link rel="stylesheet" href="https://use.typekit.net/atq8emw.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="shortcut icon" href="http://www.gravatar.com/avatar/b667dff85b9fc0286902b8e6adff8b90.png?size=32" />
+    <style>
+        body {
+            max-width: 800px;
+            margin: auto;
+            font-family: 'effra', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 32px;
+            padding-bottom: 100px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .logo>a{
+            border-bottom: 3px solid blue;
+        }
+
+        .tag {
+            font-weight: 300;
+        }
+
+        blockquote {
+            border-left: 4px solid #666;
+            margin-left: 0;
+            padding-left: 1em;
+            color: #666;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0px;
+            width: 100%;
+            overflow: auto;
+            break-inside: auto;
+            text-align: left;
+            padding: 0;
+            word-break: initial;
+        }
+
+        table tr {
+            border-top: 1px solid #dfe2e5;
+            margin: 0;
+            padding: 0;
+        }
+
+        table tr:nth-child(2n),
+        thead {
+            background-color: #f8f8f8;
+        }
+
+        table tr th {
+            font-weight: bold;
+            border: 1px solid #dfe2e5;
+            border-bottom: 0;
+            text-align: left;
+            margin: 0;
+            padding: 6px 13px;
+        }
+
+        table tr td {
+            border: 1px solid #dfe2e5;
+            text-align: left;
+            margin: 0;
+            padding: 6px 13px;
+        }
+
+        table tr th:first-child,
+        table tr td:first-child {
+            margin-top: 0;
+        }
+
+        table tr th:last-child,
+        table tr td:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="logo"><a href="/"><img alt="noio" src="/assets/_site/noio.png"></a></h1>
+    <br/>
+    <div>
+        <div class="post">
+  <h1>Adding favicons to links</h1>
+  <p>For the new design of my website I wanted to add some favicons to the blogroll. Not only do favicons make links recognizable, but a list of links with favicons is also a colorful but regular graphical element. The problem is that not every site has it's favicon stored in the same place. So you need a way to retrieve either the favicon location, or the favicon itself, to show it next to a link. I didn't want to have to look up the favicon every time I added a link to my blogroll, so an automated method was what I was looking for.</p>
+<p>There's a couple things to know. First of all, most websites just store their favicons in a location like <code>www.example.com/favicon.ico</code>. If all websites would do this, you might think, there wouldn't be a problem? Well, problems arise on websites with subdomains. Consider for example <a href="http://andr01d.newgrounds.com"><code>http://andr01d.newgrounds.com</code></a>. As you can see, the favicon is not located by just <a href="http://andr01d.newgrounds.com/favicon.ico">appending <code>/favicon</code> to the link</a>.</p>
+<p>The way these websites point the browser to the favicon is by a tag in the head of the HTML. Like on this website. My favicon is hardly in an extraordinary location, but it felt safe to tell the browser where to look anyway.</p>
+<pre><code class="language-html">&lt;link rel=&quot;SHORTCUT ICON&quot; href=&quot;http://www.noio.nl/favicon.ico&quot;/&gt;
+</code></pre>
+<p>The problem is that not all websites use the same method. Some have easy locations, some have a SHORTCUT ICON tag, some have both.</p>
+<h3>Google Shared Stuff</h3>
+<p>The best solution to a problem like this is letting someone else do the job. Google has an undocumented feature to retrieve the favicon for a certain link. I discovered this on some <a href="http://www.gtricks.com/2008/09/google-s2-share-stuff-and-also-favicon.html">recent blog posts</a>. This seems ideal, all you would have to do is create an image, and set the source to Google's url.</p>
+<pre><code class="language-html">&lt;img src=&quot;http://www.google.com/s2/favicons?domain=famfamfam.com&quot;&gt;
+&lt;/img&gt;
+</code></pre>
+<p>Unfortunately, the method has a few disadvantages.</p>
+<ul>
+<li>
+<p>Not all favicons can be retrieved, for example, <a href="http://www.google.com/s2/favicons?domain=andr01d.newgrounds.com">andr01d.newgrounds.com</a> still fails. You do get a nice default icon though.</p>
+</li>
+<li>
+<p>The favicons get a white background, even if they are transparent. This would be ok for a white website, but I wanted to show transparent icons like they were meant to look.</p>
+</li>
+<li>
+<p>Since Google had no documentation on the feature, there is no guarantee that the service will be up forever. Depending on other sites is always a bit risky. (This even goes for Google)</p>
+</li>
+</ul>
+<p>The white background made me discard this method.</p>
+<h3>Javascript</h3>
+<p>This is a method that actually came very close to being usable.
+The code below is an adaptation of <a href="http://www.askthecssguy.com/2006/12/hyperlink_cues_with_favicons.html">this method by &quot;the CSS guy&quot;</a>, but using <a href="http://www.mootools.net">mootools</a>, to make it a bit shorter. The way you use it is as follows: just call the function as soon as the page is loaded, and specify what container you want to have the links faviconized in. For example: <code>faviconizeElements('.bookmark-list li', 'image/defaulticon.png')</code> would add favicons to all links inside a <code>'bookmark-list'</code>.</p>
+<pre><code class="language-javascript">function faviconizeElements(selectors, nofavimg){
+  var links = $$(selectors + ' a');
+
+
+  links.each( function(link, index){
+    var href = link.get('href');
+    var fvcurl = getDomainFaviconURL(href);
+    if(!fvcurl) fvcurl = nofavimg;
+
+    var fvc = new Element('img', {
+      'class':'faviconimg',
+      'src':fvcurl,
+      'events':{
+        'error':function(){
+          this.src = nofavimg;
+        }
+      }
+    });
+    fvc.inject(link.getParent(), 'top');
+  });
+}
+</code></pre>
+<p>The critical part is, ofcourse, how to get the URL of the favicon? This simple regular expression basically adds <code>/favicon.ico</code> to the domain. This will not work for all links, that's why you can specify an icon to use as a default, if the favicon is not found.</p>
+<pre><code class="language-javascript">function getDomainFaviconURL(linkurl){
+  var domain = linkurl.match(/(\w+):\/\/([^/:]+)(:\d*)?([^# ]*)/);
+  domain = RegExp.$2;
+  var faviconurl = &quot;http://&quot;+domain+&quot;/favicon.ico&quot;;
+  return faviconurl;
+}
+</code></pre>
+<p>With this method we still don't catch the favicons that are not in a default location. To do that we would actually have to look into the HTML of the linked file, and find the SHORTCUT ICON tag. If we would load the HTML of every linked page to get the favicon, this would take a long time, and in the meantime there would be no favicons. With a lot of links, this might even take longer than the user spends looking at a page! And worse: the whole thing would be repeated every time the page loads. So, in a javascript approach, we are limited to fetching favicons with easily guessable locations.</p>
+<h3>WordPress specific</h3>
+<p>So, in order to avoid the problems of having to fetch the favicons while the user is waiting, I decided to store the favicon locations permanently in the WP-Links table. Each link in wordpress can have an image specified, and I will use that field to store the locations of the favicons for each link. I am writing a plugin for wordpress that can check for the locations of favicons, first by appending <code>/favicon.ico</code>, if that fails by downloading the HTML and looking at the SHORTCUT ICON tag. Then the plugin will store the found locations in the table. This is nice because the locations are stored, so they will only have to be found once. I will share the plugin, keep an eye out for a future post.</p>
+<h3>Plugin</h3>
+<p>The plugin is finished, check it out <a href="http://www.noio.nl/2008/11/noio-iconized-bookmarks/">here</a>.</p>
+
+</div>
+    </div>
+</body>
+
+</html>
