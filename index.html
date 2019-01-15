@@ -13,12 +13,13 @@ Want to get in touch? Ask anything? Just have a chat? Email or tweet me.
 
 <ul>
     {% for post in collections.posts reversed %}
-      {% assign main_tag = 'none' %}
       {% for tag in post.data.tags %}
-        {% if tag != "post" %}
+        {% if tag != "posts" %}
           {% assign main_tag = tag %}
         {% endif %}
       {% endfor %}
-      <li>{{ post.date | date: '%Y %b' }} — <a href="{{post.url}}">{{ post.data.title }}</a> <span class="tag">({{main_tag}})</span></li>
+      <li>{{ post.date | date: '%Y %b' }} — <a href="{{post.url}}">{{ post.data.title }}</a> 
+        {% if main_tag != blank %}<span class="tag">({{main_tag}})</span>{% endif %}
+      </li>
     {% endfor %}
 </ul>
