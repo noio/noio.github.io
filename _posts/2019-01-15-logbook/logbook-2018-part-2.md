@@ -2,6 +2,7 @@
 title: Garbage Country Logbook 2018 pt.2
 slug: garbage-country-logbook-2018-pt-2
 typora-root-url: ../..
+layout: post
 ---
 
 
@@ -12,6 +13,7 @@ typora-root-url: ../..
 - [Logbook 2018 Part 3](/2019/01/garbage-country-logbook-2018-pt-3)
 - [Logbook 2019](/2019/01/garbage-country-logbook-2019)
 - [Gallery](/2019/01/garbage-country-logbook-gallery)
+
 ---
 
 ## Week 28

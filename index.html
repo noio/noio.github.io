@@ -12,14 +12,15 @@ Want to get in touch? Ask anything? Just have a chat? Email or tweet me.
 <div style="margin: 20px auto; text-align: center">thomas@noio.nl // <a href="http://www.twitter.com/noionl">twitter: @noionl</a></div>
 
 <ul>
-    {% for post in collections.posts reversed %}
-      {% for tag in post.data.tags %}
+    {% for post in site.posts %}
+      {% assign main_tag = '' %}
+      {% for tag in post.tags %}
         {% if tag != "posts" %}
           {% assign main_tag = tag %}
         {% endif %}
       {% endfor %}
-      <li>{{ post.date | date: '%Y %b' }} — <a href="{{post.url}}">{{ post.data.title }}</a> 
-        {% if main_tag != blank %}<span class="tag">({{main_tag}})</span>{% endif %}
+      <li>{{ post.date | date: '%Y %b' }} — <a href="{{post.url}}">{{ post.title }}</a> 
+        {% if main_tag != '' %}<span class="tag">({{main_tag}})</span>{% endif %}
       </li>
     {% endfor %}
 </ul>

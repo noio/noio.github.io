@@ -2,6 +2,7 @@
 title: Garbage Country Logbook 2018 pt.3
 slug: garbage-country-logbook-2018-pt-3
 typora-root-url: ../..
+layout: post
 ---
 
 - [Intro](/2019/01/garbage-country-logbook)
@@ -11,7 +12,9 @@ typora-root-url: ../..
 - [Logbook 2018 Part 3](/2019/01/garbage-country-logbook-2018-pt-3) 👈 You are here.
 - [Logbook 2019](/2019/01/garbage-country-logbook-2019)
 - [Gallery](/2019/01/garbage-country-logbook-gallery)
+
 ---
+
 ## Week 40
 
 First day of October. First day of new logbook because the old one was getting sluggish in Typora. Must be all the GIFs.

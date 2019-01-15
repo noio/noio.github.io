@@ -2,6 +2,7 @@
 title: Garbage Country Logbook Gallery
 slug: garbage-country-logbook-gallery
 date: 2019-01-15 14:00:00
+layout: post
 ---
 
 - [Intro](/2019/01/garbage-country-logbook)
@@ -11,6 +12,7 @@ date: 2019-01-15 14:00:00
 - [Logbook 2018 Part 3](/2019/01/garbage-country-logbook-2018-pt-3)
 - [Logbook 2019](/2019/01/garbage-country-logbook-2019) 
 - [Gallery](/2019/01/garbage-country-logbook-gallery) 👈 You are here.
+
 ---
 
 ![2017-11-01%20at%2014.34.57.png](/assets/2019-01-15-logbook/2017-11-01%20at%2014.34.57.png)

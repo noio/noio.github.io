@@ -2,6 +2,7 @@
 title: Garbage Country Logbook 2019
 slug: garbage-country-logbook-2019
 typora-root-url: ../..
+layout: post
 ---
 
 - [Intro](/2019/01/garbage-country-logbook)
@@ -11,7 +12,9 @@ typora-root-url: ../..
 - [Logbook 2018 Part 3](/2019/01/garbage-country-logbook-2018-pt-3)
 - [Logbook 2019](/2019/01/garbage-country-logbook-2019) 👈 You are here.
 - [Gallery](/2019/01/garbage-country-logbook-gallery) 
+
 ---
+
 ## Week 1
 
 Okay, here we are again! It's 2019. Shit. Where should I go with this project? In the past I always knew which  thing to add next to a game, but now not so much. I've also been 'out of it' for too long I think. 

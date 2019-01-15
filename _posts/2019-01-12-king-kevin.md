@@ -1,6 +1,7 @@
 ---
 title: King Kevin
 slug: king-kevin
+layout: post
 ---
 
 I've disabled the Disqus comments on my site, I no longer feel like my website needs to foster its own community. However, there is one comment on the [Kingdom Flash game](/2013/10/kingdom/) that I wanted to preserve.

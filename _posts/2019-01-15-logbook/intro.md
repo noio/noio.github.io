@@ -2,6 +2,7 @@
 title: Garbage Country Logbook
 slug: garbage-country-logbook
 typora-root-url: ../..
+layout: post
 ---
 
 - [Intro](/2019/01/garbage-country-logbook) 👈 You are here.
@@ -11,7 +12,9 @@ typora-root-url: ../..
 - [Logbook 2018 Part 3](/2019/01/garbage-country-logbook-2018-pt-3)
 - [Logbook 2019](/2019/01/garbage-country-logbook-2019)
 - [Gallery](/2019/01/garbage-country-logbook-gallery)
+
 ---
+
 For the past year and a half I've been working on a prototype for a game, working title _"Garbage Country"_. It is an experiment with persistent multiplayer mechanics (using SpatialOS). In other words: a game where players can make permanent changes in a shared world. 
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/QgNR7NSiWKg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
