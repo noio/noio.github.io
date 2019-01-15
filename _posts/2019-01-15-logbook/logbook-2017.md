@@ -6,11 +6,13 @@ typora-root-url: ../../
 ---
 
 
+- [Intro](/2019/01/garbage-country-logbook)
 - [Logbook 2017](/2019/01/garbage-country-logbook-2017) 👈 You are here.
 - [Logbook 2018 Part 1](/2019/01/garbage-country-logbook-2018-pt-1)
 - [Logbook 2018 Part 2](/2019/01/garbage-country-logbook-2018-pt-2)
 - [Logbook 2018 Part 3](/2019/01/garbage-country-logbook-2018-pt-3)
 - [Logbook 2019](/2019/01/garbage-country-logbook-2019)
+- [Gallery](/2019/01/garbage-country-logbook-gallery)
 
 ---
 
@@ -250,8 +252,10 @@ The few days left in this week I dedicated to a camera system that follows the p
 
 ---
 
+- [Intro](/2019/01/garbage-country-logbook)
 - [Logbook 2017](/2019/01/garbage-country-logbook-2017) 👈 You are here.
 - [Logbook 2018 Part 1](/2019/01/garbage-country-logbook-2018-pt-1)
 - [Logbook 2018 Part 2](/2019/01/garbage-country-logbook-2018-pt-2)
 - [Logbook 2018 Part 3](/2019/01/garbage-country-logbook-2018-pt-3)
 - [Logbook 2019](/2019/01/garbage-country-logbook-2019)
+- [Gallery](/2019/01/garbage-country-logbook-gallery)

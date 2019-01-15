@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="google-site-verification" content="GczuurekKRrnQbnvMKZe8V37yWH66ZewOF86uJfN27I" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="noio" href="http://www.noio.nl/feed.xml">
+    <link rel="stylesheet" href="https://use.typekit.net/atq8emw.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="shortcut icon" href="http://www.gravatar.com/avatar/b667dff85b9fc0286902b8e6adff8b90.png?size=32" />
+    <style>
+        body {
+            max-width: 800px;
+            margin: auto;
+            font-family: 'effra', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 32px;
+            padding-bottom: 100px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .logo>a{
+            border-bottom: 3px solid blue;
+        }
+
+        .tag {
+            font-weight: 300;
+        }
+
+        blockquote {
+            border-left: 4px solid #666;
+            margin-left: 0;
+            padding-left: 1em;
+            color: #666;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0px;
+            width: 100%;
+            overflow: auto;
+            break-inside: auto;
+            text-align: left;
+            padding: 0;
+            word-break: initial;
+        }
+
+        table tr {
+            border-top: 1px solid #dfe2e5;
+            margin: 0;
+            padding: 0;
+        }
+
+        table tr:nth-child(2n),
+        thead {
+            background-color: #f8f8f8;
+        }
+
+        table tr th {
+            font-weight: bold;
+            border: 1px solid #dfe2e5;
+            border-bottom: 0;
+            text-align: left;
+            margin: 0;
+            padding: 6px 13px;
+        }
+
+        table tr td {
+            border: 1px solid #dfe2e5;
+            text-align: left;
+            margin: 0;
+            padding: 6px 13px;
+        }
+
+        table tr th:first-child,
+        table tr td:first-child {
+            margin-top: 0;
+        }
+
+        table tr th:last-child,
+        table tr td:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="logo"><a href="/"><img alt="noio" src="/assets/_site/noio.png"></a></h1>
+    <br/>
+    <div>
+        <div class="post">
+  <h1>Tracking Hands</h1>
+  <p>The last few months I've been working on building a small program that can track hands from a webcam feed in real-time. For this, I used Deep Neural Networks, with many thanks to <a href="http://course.fast.ai">course.fast.ai</a> for getting me caught up on the subject. Getting up and running with Convolutional Neural Networks was pretty easy, as was training and getting decent accuracy with a limited training set. I kept a more detailed log in <a href="http://forums.fast.ai/t/training-a-network-to-detect-hands/4917">this forum thread</a>. The results below were generated frame-by-frame and then converted to a movie.</p>
+<p><img src="/assets/2017-10-10-tracking-hands/example.gif" alt="Example GIF"></p>
+<p>Unfortunately, the real problem with this project is turning out to have a more technical (as opposed to theoretical) nature. My goal was to wrap the neural network in a somewhat-portable &quot;tracking server&quot; that broadcasts to other motion-controlled apps on the same network/machine. I have tried OpenCV::DNN and tiny-dnn in an openFrameworks app, but I haven't found a convenient solution to using the network yet. From what I've seen, the research libraries (Keras, PyTorch) are elegant and easy to use, but using the networks from C++ in 'production' is a whole different story.</p>
+
+</div>
+    </div>
+</body>
+
+</html>

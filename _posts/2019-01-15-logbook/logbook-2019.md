@@ -4,11 +4,13 @@ slug: garbage-country-logbook-2019
 typora-root-url: ../..
 ---
 
+- [Intro](/2019/01/garbage-country-logbook)
 - [Logbook 2017](/2019/01/garbage-country-logbook-2017) 
 - [Logbook 2018 Part 1](/2019/01/garbage-country-logbook-2018-pt-1) 
 - [Logbook 2018 Part 2](/2019/01/garbage-country-logbook-2018-pt-2)
 - [Logbook 2018 Part 3](/2019/01/garbage-country-logbook-2018-pt-3)
 - [Logbook 2019](/2019/01/garbage-country-logbook-2019) 👈 You are here.
+- [Gallery](/2019/01/garbage-country-logbook-gallery) 
 ---
 ## Week 1
 
@@ -77,8 +79,10 @@ I modeled a small tent.
 I've assigned ownership, now I want to visualise it.
 
 ---
+- [Intro](/2019/01/garbage-country-logbook)
 - [Logbook 2017](/2019/01/garbage-country-logbook-2017) 
 - [Logbook 2018 Part 1](/2019/01/garbage-country-logbook-2018-pt-1) 
 - [Logbook 2018 Part 2](/2019/01/garbage-country-logbook-2018-pt-2)
 - [Logbook 2018 Part 3](/2019/01/garbage-country-logbook-2018-pt-3)
 - [Logbook 2019](/2019/01/garbage-country-logbook-2019) 👈 You are here.
+- [Gallery](/2019/01/garbage-country-logbook-gallery) 

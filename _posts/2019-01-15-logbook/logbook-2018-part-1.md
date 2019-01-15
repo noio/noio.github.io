@@ -5,11 +5,13 @@ layout: post
 typora-root-url: ../../
 ---
 
+- [Intro](/2019/01/garbage-country-logbook)
 - [Logbook 2017](/2019/01/garbage-country-logbook-2017) 
 - [Logbook 2018 Part 1](/2019/01/garbage-country-logbook-2018-pt-1) 👈 You are here.
 - [Logbook 2018 Part 2](/2019/01/garbage-country-logbook-2018-pt-2)
 - [Logbook 2018 Part 3](/2019/01/garbage-country-logbook-2018-pt-3)
 - [Logbook 2019](/2019/01/garbage-country-logbook-2019)
+- [Gallery](/2019/01/garbage-country-logbook-gallery)
 ---
 
 ## Week 2 & 3
@@ -510,8 +512,10 @@ The transition to 'below fog' looks way better now though, that was important.
 
 
 ---
+- [Intro](/2019/01/garbage-country-logbook)
 - [Logbook 2017](/2019/01/garbage-country-logbook-2017) 
 - [Logbook 2018 Part 1](/2019/01/garbage-country-logbook-2018-pt-1) 👈 You are here.
 - [Logbook 2018 Part 2](/2019/01/garbage-country-logbook-2018-pt-2)
 - [Logbook 2018 Part 3](/2019/01/garbage-country-logbook-2018-pt-3)
 - [Logbook 2019](/2019/01/garbage-country-logbook-2019)
+- [Gallery](/2019/01/garbage-country-logbook-gallery)
