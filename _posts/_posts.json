@@ -1,0 +1,4 @@
+{
+    "permalink": "/{{ page.date | date: '%Y/%m/' }}/{{ slug }}/index.html",
+    "tags": ["posts"]
+}

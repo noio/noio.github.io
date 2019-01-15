@@ -12,7 +12,7 @@ tags:
 typora-root-url: ..
 ---
 
-* ![](/assets/2011-11-14-untitled-wallpaper/mist-op-het-ij.png)
+![](/assets/2011-11-14-untitled-wallpaper/mist-op-het-ij.png)
 
 I usually don't upload photos or wallpapers, but here you go. I made the following sizes:
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="google-site-verification" content="GczuurekKRrnQbnvMKZe8V37yWH66ZewOF86uJfN27I" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+    <link rel="stylesheet" href="https://use.typekit.net/atq8emw.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="shortcut icon" href="http://www.gravatar.com/avatar/b667dff85b9fc0286902b8e6adff8b90.png?size=32" />
+    <style>
+        body {
+            max-width: 800px;
+            margin: auto;
+            font-family: 'effra', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 32px;
+            padding-bottom: 100px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .tag,
+        time {
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="logo"><a href="/"><img alt="noio" src="/assets/_site/noio.png"></a></h1>
+    <div>
+        {{ content }}
+    </div>
+</body>
+
+</html>

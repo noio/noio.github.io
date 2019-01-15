@@ -13,8 +13,8 @@ tags:
 typora-root-url: ..
 ---
 
-* ![](/assets/2009-06-20-karelnieuwlandarchitekten-nl/kna-nl-01.png)
-* ![](/assets/2009-06-20-karelnieuwlandarchitekten-nl/kna-nl-02.png)
+![](/assets/2009-06-20-karelnieuwlandarchitekten-nl/kna-nl-01.png)
+![](/assets/2009-06-20-karelnieuwlandarchitekten-nl/kna-nl-02.png)
 
 You can see this site in action [here](http://www.karelnieuwlandarchitekten.nl).
 

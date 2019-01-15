@@ -13,7 +13,7 @@ tags:
 typora-root-url: ..
 ---
 
-* ![Gameplay GIF](/assets/2017-04-26-ldjam38-houses/gameplay.gif)
+![Gameplay GIF](/assets/2017-04-26-ldjam38-houses/gameplay.gif)
 
 I made a little game for Ludum Dare 38. Was the first time I did LD and I learned a few things about game jamming. I might add a few more levels in the near future because I really ran out of time for the compo.
 

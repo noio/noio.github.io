@@ -13,7 +13,9 @@ tags:
 typora-root-url: ..
 ---
 
-  * ![](/assets/2012-10-02-pass-creator-app-icon/iTunesArtwork.png)
-
 This is the icon I made for the Pass Creator app: it allows you to add custom passes to your iOS 6 passbook.
+
+![](/assets/2012-10-02-pass-creator-app-icon/iTunesArtwork.png)
+
+
 

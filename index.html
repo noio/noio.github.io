@@ -1,59 +1,24 @@
 ---
-layout: default
 title: noio
+layout: default
 ---
+Thomas van den Berg creates games and game-like things with a small studio named &lsquo;noio&rsquo;.
+I love working on code, art, and the magic that happens when those come together.
+This page is a combination blog and portfolio of some things I've done.
+Last big thing I worked on is <a href='http://www.kingdomthegame.com'>Kingdom</a>, a minimalist strategy game in a
+pixel art style.
+Want to get in touch? Ask anything? Just have a chat? Email or tweet me.
 
-<div class="landing">
+<div style="margin: 20px auto; text-align: center">thomas@noio.nl // <a href="http://www.twitter.com/noionl">twitter: @noionl</a></div>
 
-
-  <!--<a href="https://twitter.com/noionl" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @noionl</a>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>-->
-
-
-  <div class="intro">
-    <h1 class="logo"><a href="/">noio</a></h1>
-    Thomas van den Berg creates games and game-like things with a small studio named &lsquo;noio&rsquo;.
-    I love working on code, art, and the magic that happens when those come together.
-    This page is a combination blog and portfolio of some things I've done.
-    Last big thing I worked on is <a href='http://www.kingdomthegame.com'>Kingdom</a>, a minimalist strategy game in a pixel art style.
-    Want to get in touch? Ask anything? Just have a chat? Email or tweet me.
-
-    <div class="card">
-      <address>
-        <a href="mailto:thomas@noio.nl" target="_blank"><span class='mailname'>thomas</span><em> @ </em>noio.nl</a>
-      </address>
-      <a class="twitter" href="https://twitter.com/noionl"><i class="fa fa-twitter-square" aria-hidden="true"></i><em> @ </em>noionl</a>
-    </div>
-  </div>
-
-  <div>
-
-  </div>
-
-</div>
-<div class="tags">
-    {% for tag in site.tags %}
-      <a  href='/#{{ tag | first | replace:' ','-' }}' class='tag-{{ tag | first | replace:' ','-' }} {% if tag.last.size < 3 %}few{% elsif tag.last.size < 5 %}some{% else %}many{% endif %}'>{{ tag | first }}</a>
+<ul>
+    {% for post in collections.posts reversed %}
+      {% assign main_tag = 'none' %}
+      {% for tag in post.data.tags %}
+        {% if tag != "post" %}
+          {% assign main_tag = tag %}
+        {% endif %}
+      {% endfor %}
+      <li>{{ post.date | date: '%Y %b' }} — <a href="{{post.url}}">{{ post.data.title }}</a> <span class="tag">({{main_tag}})</span></li>
     {% endfor %}
-</div>
-<div class="site">
-    <ul class="posts">
-    {% for post in site.posts %}
-    	<li>
-        {% for tag in post.tags %}
-          <meta name="tags" content="{{tag | replace:' ','-'}}"/>
-        {% endfor %}
-    		  <a href="{{ post.url }}">
-    		{% if post.thumbnail %}
-    			<img src="{{post.thumbnail}}"/>
-    		{% else %}
-    			<img src="css/nothumb.png"/>
-    		{% endif %}
-        <div class='title'><span>{{ post.title }}</span></div>
-        </a>
-    		<!-- <span class='date'>{{ post.date | date: "%b %Y" }}</span>  -->
-    	</li>
-
-    {% endfor %}
-  </ul>
-</div>
+</ul>
