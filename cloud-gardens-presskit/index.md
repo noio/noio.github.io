@@ -1,8 +1,8 @@
 # Cloud Gardens Presskit
 
-**Developer:** Noio Games
+**Developer:** Noio Games ([@noio_games on Twitter](https://twitter.com/noio_games))
 
-**Music By:** [Amos Roddy](https://amosroddy.bandcamp.com/) (composer of the Kingdom OST)
+**Music By:** [Amos Roddy](https://amosroddy.bandcamp.com/) (composer of the Kingdom Series OST)
 
 **Release Date:** 2020
 
@@ -20,9 +20,13 @@
 
 ## Description
 
+![Cloud Gardens GIF](cloud_gardens_shots.gif)
+
 In Cloud Gardens the player overgrows lo-fi scenes of urban decay and manufactured landscapes. Plant your seeds in the right place to create small overgrown dioramas with hundreds of different items and progress through the stages in six chapters. Discover a dozen different seeds and learn how to make them thrive. Use the photo mode to show off your creations.
 
+## About Noio
 
+Noio Games is a small studio led by Thomas van den Berg, creator of the Kingdom Series. For this game we've worked together with [Amos Roddy](https://amosroddy.bandcamp.com/) (composer of the Kingdom Series), [Elijah Cauly](https://www.elijahcauley.com) for level design, and [Tom Kitchen](http://tom-kitchen.co.uk/) doing 3d modeling and texturing. 
 
 ## Screenshots
 
