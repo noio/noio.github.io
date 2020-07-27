@@ -6,7 +6,7 @@
 
 **Platforms:** Steam and possibly iOS
 
-**Website:** https://store.steampowered.com/app/1372320/Cloud_Gardens/
+**Website:** [Steam Store Page](https://store.steampowered.com/app/1372320/Cloud_Gardens/)
 
 
 
