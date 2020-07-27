@@ -16,6 +16,8 @@
 
 ## Screenshots
 
+[<img src="folder-zip.png"></img> Download All](images/cloud-gardens-screenshots.zip)
+
 ![screenshot_01](images/screenshot_01.png)
 
 ![screenshot_02](images/screenshot_02.png)
@@ -39,3 +41,4 @@
 ![screenshot_12](images/screenshot_12.png)
 
 ![screenshot_13](images/screenshot_13.png)
+
