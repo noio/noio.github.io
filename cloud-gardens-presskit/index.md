@@ -14,6 +14,12 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ght0J1EfHw0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Description
+
+In Cloud Gardens the player overgrows lo-fi scenes of urban decay and manufactured landscapes. Plant your seeds in the right place to create small overgrown dioramas with hundreds of different items and progress through the stages in six chapters. Discover a dozen different seeds and learn how to make them thrive. Use the photo mode to show off your creations.
+
+
+
 ## Screenshots
 
 [<img src="folder-zip.png"></img> Download All](images/cloud-gardens-screenshots.zip)
