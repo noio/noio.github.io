@@ -2,6 +2,8 @@
 
 **Developer:** Noio Games
 
+**Music By:** [Amos Roddy](https://amosroddy.bandcamp.com/) (composer of the Kingdom OST)
+
 **Release Date:** 2020
 
 **Platforms:** Steam and possibly iOS
