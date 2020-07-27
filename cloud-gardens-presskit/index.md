@@ -8,6 +8,8 @@
 
 **Website:** [Steam Store Page](https://store.steampowered.com/app/1372320/Cloud_Gardens/)
 
+**Contact**: [thomas@noio.nl](mailto:thomas@noio.nl) — & — [hello@futurefriendsgames.com](mailto:hello@futurefriendsgames.com)
+
 
 
 ## Trailer
