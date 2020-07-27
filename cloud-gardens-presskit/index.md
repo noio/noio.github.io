@@ -26,7 +26,7 @@ In Cloud Gardens the player overgrows lo-fi scenes of urban decay and manufactur
 
 ## About Noio
 
-Noio Games is a small studio led by Thomas van den Berg, creator of the Kingdom Series. For this game we've worked together with [Amos Roddy](https://amosroddy.bandcamp.com/) (composer of the Kingdom Series), [Elijah Cauly](https://www.elijahcauley.com) for level design, and [Tom Kitchen](http://tom-kitchen.co.uk/) doing 3d modeling and texturing. 
+Noio Games is a small studio led by Thomas van den Berg, creator of the Kingdom Series. For this game we've worked together with [Amos Roddy](https://amosroddy.bandcamp.com/) (composer of the Kingdom Series), [Elijah Cauley](https://www.elijahcauley.com) for level design, and [Tom Kitchen](http://tom-kitchen.co.uk/) doing 3d modeling and texturing. 
 
 ## Screenshots
 
