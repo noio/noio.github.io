@@ -22,7 +22,7 @@ In Cloud Gardens the player overgrows lo-fi scenes of urban decay and manufactur
 
 ## Screenshots
 
-[<img src="folder-zip.png"></img> Download All](images/cloud-gardens-screenshots.zip)
+[<img width="48" height="48" src="folder-zip.png" alt="zip icon"> **Download All**](images/cloud-gardens-screenshots.zip)
 
 ![screenshot_01](images/screenshot_01.png)
 
