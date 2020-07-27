@@ -26,27 +26,27 @@ In Cloud Gardens the player overgrows lo-fi scenes of urban decay and manufactur
 
 [<img width="24" height="24" src="folder-zip.svg" alt="zip icon"> **Download All**](images/cloud-gardens-screenshots.zip)
 
-![screenshot_01](images/screenshot_01.png)
+[![screenshot_01](images/screenshot_01.png)](images/screenshot_01.png)
 
-![screenshot_02](images/screenshot_02.png)
+[![screenshot_02](images/screenshot_02.png)](images/screenshot_02.png)
 
-![screenshot_03](images/screenshot_03.png)
+[![screenshot_03](images/screenshot_03.png)](images/screenshot_03.png)
 
-![screenshot_04](images/screenshot_04.png)
+[![screenshot_04](images/screenshot_04.png)](images/screenshot_04.png)
 
-![screenshot_05](images/screenshot_05.png)
+[![screenshot_05](images/screenshot_05.png)](images/screenshot_05.png)
 
-![screenshot_07](images/screenshot_07.png)
+[![screenshot_07](images/screenshot_07.png)](images/screenshot_07.png)
 
-![screenshot_08](images/screenshot_08.png)
+[![screenshot_08](images/screenshot_08.png)](images/screenshot_08.png)
 
-![screenshot_09](images/screenshot_09.png)
+[![screenshot_09](images/screenshot_09.png)](images/screenshot_09.png)
 
-![screenshot_10](images/screenshot_10.png)
+[![screenshot_10](images/screenshot_10.png)](images/screenshot_10.png)
 
-![screenshot_11](images/screenshot_11.png)
+[![screenshot_11](images/screenshot_11.png)](images/screenshot_11.png)
 
-![screenshot_12](images/screenshot_12.png)
+[![screenshot_12](images/screenshot_12.png)](images/screenshot_12.png)
 
-![screenshot_13](images/screenshot_13.png)
+[![screenshot_13](images/screenshot_13.png)](images/screenshot_13.png)
 
