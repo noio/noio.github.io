@@ -1,6 +1,6 @@
 # Cloud Gardens Presskit
 
-**Developer:** Noio Games ([@noio_games on Twitter](https://twitter.com/noio_games))
+**Developer:** Noio Games ([@noio_games](https://twitter.com/noio_games) on Twitter)
 
 **Music By:** [Amos Roddy](https://amosroddy.bandcamp.com/) (composer of the Kingdom Series OST)
 
