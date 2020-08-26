@@ -24,6 +24,8 @@
 
 In Cloud Gardens the player overgrows lo-fi scenes of urban decay and manufactured landscapes. Plant your seeds in the right place to create small overgrown dioramas with hundreds of different items and progress through the stages in six chapters. Discover a dozen different seeds and learn how to make them thrive. Use the photo mode to show off your creations.
 
+![Cloud Gardens Greenhouse GIF](greenhouse_spin.gif)
+
 ## About Noio
 
 Noio Games is a small studio led by Thomas van den Berg, creator of the Kingdom Series. For this game we've worked together with [Amos Roddy](https://amosroddy.bandcamp.com/) (composer of the Kingdom Series), [Elijah Cauley](https://www.elijahcauley.com) for level design,  [Tom Kitchen](http://tom-kitchen.co.uk/) doing 3d modeling and texturing and additional art by [@Franrekkk](https://twitter.com/Franrekkk) on twitter
