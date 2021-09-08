@@ -4,6 +4,8 @@
 
 **Music By:** [Amos Roddy](https://amosroddy.bandcamp.com/) (composer of the Kingdom Series OST)
 
+**Level Design:** [Elijah Cauley](https://twitter.com/small_signs)
+
 **Release Date:** 2020
 
 **Platforms:** Steam and possibly iOS
