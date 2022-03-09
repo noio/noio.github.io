@@ -1,6 +1,6 @@
 ---
 title: Cloud Gardens is out of Early Access
-slug: cloud-gardens
+slug: cloud-gardens-out-of-early-access
 layout: post
 ---
 

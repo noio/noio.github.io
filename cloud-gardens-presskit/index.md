@@ -33,6 +33,9 @@ Noio Games is a small studio led by Thomas van den Berg, creator of the Kingdom 
 ## Logo
 
 [![Logo](logo.png)](logo.png)
+
+![cloud-gardens-box-art](cloud-gardens-box-art.png)
+
 [![Logo with Background](logo_with_bg.png)](logo_with_bg.png)
 [![Poster](poster.jpg)](poster.jpg)
 
