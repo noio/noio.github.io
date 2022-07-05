@@ -8,7 +8,7 @@
 
 **Release Date:** 2020
 
-**Platforms:** Steam and possibly iOS
+**Platforms:** Steam, Xbox, Nintendo Switch
 
 **Website:** [Steam Store Page](https://store.steampowered.com/app/1372320/Cloud_Gardens/)
 
