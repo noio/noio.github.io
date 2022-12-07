@@ -19,6 +19,7 @@
         body {
             max-width: 800px;
             margin: auto;
+            padding: 0 6px;
             font-family: 'effra', sans-serif;
             font-weight: 400;
             font-size: 20px;
@@ -42,14 +43,21 @@
             max-width: 100%;
         }
 
-        h1{
+        .title {
+            max-width: 540px;
             display: flex;
+            justify-content: space-between;
         }
 
-        .logo {
-            width: 250px;
+        .title .animation {
+            width: 27.777777777%;
             height: auto;
-            padding: 40px 0 0 120px;
+        }
+        
+        .title .logo {
+            max-width: 250px;
+            float: right;
+            height: auto;
         }
 
         .main-post-list
@@ -128,7 +136,8 @@
 </head>
 
 <body>
-    <h1 ><img alt="self portrait" src="/animation.gif">
+    <h1 class="title">
+        <img class="animation" alt="self portrait" src="/animation.gif">
         <a class="logo" href="/"><img alt="noio" src="/noio.png"></a></h1>
     <div>
         {{ content }}
