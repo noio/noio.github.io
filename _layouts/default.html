@@ -26,6 +26,14 @@
             padding-bottom: 100px;
         }
 
+        a {
+            color: #46599c;
+        }
+        a:visited
+        {
+            color: #B09BAD;
+        }
+
         li {
             margin: 8px 0;
         }
@@ -34,9 +42,29 @@
             max-width: 100%;
         }
 
-        .logo>a{
-            border-bottom: 3px solid blue;
+        h1{
+            display: flex;
         }
+
+        .logo {
+            width: 250px;
+            height: auto;
+            padding: 40px 0 0 120px;
+        }
+
+        .main-post-list
+        {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .main-post-list .year
+        {
+            font-weight: bold;
+        }
+
+        /* .logo>a{
+            border-bottom: 3px solid blue;
+        } */
 
         .tag {
             font-weight: 300;
@@ -100,8 +128,8 @@
 </head>
 
 <body>
-    <h1 class="logo"><a href="/"><img alt="noio" src="/noio.png"></a></h1>
-    <br/>
+    <h1 ><img alt="self portrait" src="/animation.gif">
+        <a class="logo" href="/"><img alt="noio" src="/noio.png"></a></h1>
     <div>
         {{ content }}
     </div>
