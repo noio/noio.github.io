@@ -6,6 +6,8 @@
 
 **Level Design:** [Elijah Cauley](https://twitter.com/small_signs)
 
+**3D Art:** [Tom Kitchen](https://twitter.com/tom_kitchen)
+
 **Release Date:** 2020
 
 **Platforms:** Steam, Xbox, Nintendo Switch
