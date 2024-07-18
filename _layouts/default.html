@@ -8,7 +8,7 @@
     <meta name="google-site-verification" content="GczuurekKRrnQbnvMKZe8V37yWH66ZewOF86uJfN27I" />
     <meta name="viewport" content="width=device-width">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
-    
+
     <link rel="stylesheet" href="https://use.typekit.net/atq8emw.css">
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
@@ -32,8 +32,8 @@
         a {
             color: #46599c;
         }
-        a:visited
-        {
+
+        a:visited {
             color: #B09BAD;
         }
 
@@ -55,20 +55,44 @@
             width: 27.777777777%;
             height: fit-content;
         }
-        
+
         .title .logo {
             max-width: 250px;
             float: right;
             height: auto;
         }
 
-        .main-post-list
-        {
+        #games {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 100%;
+            margin: 50px 0;
+            /* margin-left: -10px; */
+            /* margin-right: -10px; */
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+
+        #games a {
+            flex: 0 0 260px;
+            box-sizing: border-box;
+            /* margin: 10px; */
+        }
+
+        #games img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        .main-post-list {
             list-style-type: none;
             padding-left: 0;
         }
-        .main-post-list .year
-        {
+
+        .main-post-list .year {
             font-weight: bold;
         }
 
@@ -140,7 +164,8 @@
 <body>
     <h1 class="title">
         <img class="animation" alt="self portrait" src="/animation.gif">
-        <a class="logo" href="/"><img alt="noio" src="/noio.png"></a></h1>
+        <a class="logo" href="/"><img alt="noio" src="/noio.png"></a>
+    </h1>
     <div>
         {{ content }}
     </div>
