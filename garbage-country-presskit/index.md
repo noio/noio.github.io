@@ -1,10 +1,16 @@
-# GARBAGE COUNTRY
+---
+layout: presskit
+---
 
-by Noio Games
+![](key-art/Key Art (Logo).png) 
 
-[@noio.games](https://bsky.app/profile/noio.games) (bluesky) | [@noio_games](https://twitter.com/noio_games) (twitter)
+# GARBAGE COUNTRY PRESSKIT
 
-...
+## Noio Games
+
+[noio.games](noio.games) (website) | [@noio.games](https://bsky.app/profile/noio.games) (bluesky) | [@noio_games](https://twitter.com/noio_games) (twitter)
+
+### Credits
 
 a game by **Thomas van den Berg** |
 level design **Elijah Cauley** |
@@ -73,5 +79,6 @@ Screenshots are also all in 4K resolution: just Right-Click -> Save As...
 | ![](screenshots/screenshot-03.png) |
 | ![](screenshots/screenshot-04.png) |
 | ![](screenshots/screenshot-05.png) |
+| ![](screenshots/screenshot-06.png) |
 
 
