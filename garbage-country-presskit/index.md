@@ -34,6 +34,8 @@ concept art **Shaun Mooney** |
 
 ## Description
 
+![](garbage-country.gif)
+
 GARBAGE COUNTRY is a vehicle exploration and tower defense game set in a vast, post-industrial wasteland. Players drive through a handcrafted open world, scavenging abandoned landmarks, upgrading their vehicle, and fending off waves of derelict bots while uncovering the remnants of a world left behind.
 
 The project was born from a simple idea: seeing players drawn into the quiet, overgrown worlds of Cloud Gardens, but wanting to engage with it on a deeper level.\

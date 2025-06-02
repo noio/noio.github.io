@@ -1,3 +1,7 @@
+---
+layout: presskit
+---
+
 # Cloud Gardens Presskit
 
 **Developer:** Noio Games ([@noio_games](https://twitter.com/noio_games) on Twitter)
