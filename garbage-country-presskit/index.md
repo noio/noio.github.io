@@ -55,10 +55,9 @@ All art is linked at full resolution, just Right-Click -> Save As...
 
 ### Logo
 
-| --- | --- |
-| Logo (Shadow) | ![](key-art/Logo (Shadow).png) |
-| Logo (White) | ![](key-art/Logo (White).png) |
-| Logo (Black) | ![](key-art/Logo (Black).png) |
+| Color | White | Black |
+| --- | --- | --- |
+| ![](key-art/Logo (Color).png) | ![](key-art/Logo (White).png) | ![](key-art/Logo (Black).png) |
 
 ## Developer Logo
 
