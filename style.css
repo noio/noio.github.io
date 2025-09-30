@@ -33,12 +33,12 @@ img {
 
 .title .profile-pic {
     width: 20%;
-    margin: 4% 5% 4% 4%;
+    margin: 4% 5% 3% 4%;
     height: fit-content;
 }
 
 .title .logo {
-    width: 40%;
+    width: 38%;
     margin: auto 5%;
     height: auto;
 }
