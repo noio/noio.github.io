@@ -27,19 +27,20 @@ img {
 }
 
 .title {
-    max-width: 540px;
     display: flex;
-    justify-content: space-between;
+    justify-content:flex-start;
 }
 
-.title .animation {
-    width: 27.777777777%;
+.title .profile-pic {
+    width: 20%;
+    margin: 4% 8% 4% 4%;
     height: fit-content;
 }
 
 .title .logo {
-    max-width: 250px;
-    float: right;
+    width: 33%;
+    margin-left: 5%;
+    /* float: left; */
     height: auto;
 }
 
