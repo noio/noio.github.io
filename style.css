@@ -15,7 +15,7 @@ a {
 }
 
 a:visited {
-    color: #B09BAD;
+    color: #976c90;
 }
 
 li {
@@ -33,14 +33,13 @@ img {
 
 .title .profile-pic {
     width: 20%;
-    margin: 4% 8% 4% 4%;
+    margin: 4% 5% 4% 4%;
     height: fit-content;
 }
 
 .title .logo {
-    width: 33%;
-    margin-left: 5%;
-    /* float: left; */
+    width: 40%;
+    margin: auto 5%;
     height: auto;
 }
 
