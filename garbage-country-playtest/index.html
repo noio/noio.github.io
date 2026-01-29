@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Country Playtest</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+            background-image: url('../garbage-country-presskit/key-art/Key Art (Clean).png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .logo {
+            max-width: 400px;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            max-width: 350px;
+            width: 90%;
+        }
+        h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        input {
+            padding: 10px;
+            width: 100%;
+            max-width: 280px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+        button {
+            padding: 10px 30px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="../garbage-country-presskit/key-art/Logo (Color).png" alt="Garbage Country" class="logo">
+    <div class="container">
+        <h2>CLAIM YOUR STEAM KEY<br>FOR THE PLAYTEST</h2>
+        <div>
+            <div>Email Address (for verification only)</div>
+            <input type="email" id="email" placeholder="your@email.com">
+        </div>
+        <div>
+            <button id="claimBtn">Claim Key</button>
+        </div>
+        <div id="spinner" style="display:none; margin-top: 20px;">⏳</div>
+        <div id="result" style="margin-top: 20px; font-family: monospace; font-size: 16px;"></div>
+    </div>
+
+    <script>
+        /* Hey there. I know the obvious thing is right here in front of you.
+           All I can do is ask that you don't. Thanks. */
+
+        const k = 'GarbageCountry';
+
+        function decode(s) {
+            const decoded = atob(s);
+            return decoded.split('').map((c, i) =>
+                String.fromCharCode(c.charCodeAt(0) ^ k.charCodeAt(i % k.length))
+            ).join('');
+        }
+
+        async function hash(email) {
+            const normalized = email.toLowerCase().trim();
+            const msgBuffer = new TextEncoder().encode(normalized);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        const data = {
+            '09bc0e4a4daf84dcd934e0278fbe15af192e5415a7a1259828c4c9da7336b379': 'HTExKCxKLQclJVlZRjIMVTU=',
+            'd83d33bc6a939f35769a670ae947ab716d0f6c3962fd78fbc4720cfee61fec43': 'HjAgJzBKIwchPV1ZIi4BMTQ=',
+        };
+
+        document.getElementById('claimBtn').addEventListener('click', async () => {
+            const email = document.getElementById('email').value.trim();
+            const spinner = document.getElementById('spinner');
+            const result = document.getElementById('result');
+
+            result.textContent = '';
+            result.style.color = 'black';
+
+            if (!email) {
+                result.textContent = 'Please enter your email address';
+                result.style.color = 'red';
+                return;
+            }
+
+            spinner.style.display = 'block';
+
+            setTimeout(async () => {
+                const h = await hash(email);
+
+                if (data[h]) {
+                    const key = decode(data[h]);
+                    result.textContent = `Your Steam Key: ${key}`;
+                    result.style.color = 'green';
+                } else {
+                    result.textContent = 'Email not found. Please check your email or contact me on Discord.';
+                    result.style.color = 'red';
+                }
+
+                spinner.style.display = 'none';
+            }, 500);
+        });
+
+        // Allow Enter key to submit
+        document.getElementById('email').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('claimBtn').click();
+            }
+        });
+    </script>
+</body>
+</html>

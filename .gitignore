@@ -5,3 +5,8 @@ vendor
 .bundle
 node_modules
 _site
+
+# Garbage Country Playtest
+garbage-country-playtest/keys.txt
+garbage-country-playtest/emails.txt
+garbage-country-playtest/assign-and-generate.py
