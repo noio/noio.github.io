@@ -14,7 +14,7 @@
             align-items: center;
             min-height: 100vh;
             font-family: sans-serif;
-            background-image: url('../garbage-country-presskit/key-art/Key Art (Clean).png');
+            background-image: url('Key Art (Clean).png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -53,7 +53,7 @@
     </style>
 </head>
 <body>
-    <img src="../garbage-country-presskit/key-art/Logo (Color).png" alt="Garbage Country" class="logo">
+    <img src="Logo (Color).png" alt="Garbage Country" class="logo">
     <div class="container">
         <h2>CLAIM YOUR STEAM KEY<br>FOR THE PLAYTEST</h2>
         <div>
@@ -67,6 +67,7 @@
         <div id="result" style="margin-top: 20px; font-family: monospace; font-size: 16px;"></div>
     </div>
 
+    <script src="keys-data.js"></script>
     <script>
         /* Hey there. I know the obvious thing is right here in front of you.
            All I can do is ask that you don't. Thanks. */
@@ -88,11 +89,6 @@
             return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
         }
 
-        const data = {
-            '09bc0e4a4daf84dcd934e0278fbe15af192e5415a7a1259828c4c9da7336b379': 'HTExKCxKLQclJVlZRjIMVTU=',
-            'd83d33bc6a939f35769a670ae947ab716d0f6c3962fd78fbc4720cfee61fec43': 'HjAgJzBKIwchPV1ZIi4BMTQ=',
-        };
-
         document.getElementById('claimBtn').addEventListener('click', async () => {
             const email = document.getElementById('email').value.trim();
             const spinner = document.getElementById('spinner');
@@ -112,8 +108,8 @@
             setTimeout(async () => {
                 const h = await hash(email);
 
-                if (data[h]) {
-                    const key = decode(data[h]);
+                if (KEYS_DATABASE[h]) {
+                    const key = decode(KEYS_DATABASE[h]);
                     result.textContent = `Your Steam Key: ${key}`;
                     result.style.color = 'green';
                 } else {
