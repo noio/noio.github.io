@@ -8,7 +8,8 @@
 // use hashed asset URLs — for those, set an explicit `img` override
 // (grab it from the store page: the big header image URL).
 const NEIGHBORS = [
-    { appid: 1458140, name: "Pacific Drive" },
+    { appid: 1458140, name: "Pacific Drive",
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1458140/3a5fa1e845c13b48f9e2ed042f4538ac62bd16ed/header.jpg" },
     { appid: 1562430, name: "DREDGE" },
     { appid: 2929250, name: "over the hill" },
     { appid: 2997230, name: "Planet of Lana II",
@@ -16,15 +17,17 @@ const NEIGHBORS = [
     { appid: 757310,  name: "Sable" },
     { appid: 4162340, name: "Verdant",
       img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4162340/ea7e75f685b5ca4c242b1a14c583354b24c384b9/header.jpg" },
-    { appid: 3293010, name: "Easy Delivery Co." },
+    { appid: 3293010, name: "Easy Delivery Co.",
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3293010/2d0ded07083fd997234193517d5a6c65a1cf7920/header.jpg" },
     { appid: 4005880, name: "DETOUR",
       img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4005880/f144126f46c762be8890a21ca61cc74118f85b14/header.jpg" },
-    { appid: 3090810, name: "Truckful" },
+    { appid: 3090810, name: "Truckful",
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3090810/84527335c4107d4ad2e459e97f0af3b0343ffbc2/header.jpg" },
 ];
 const OUR_NAME = "Garbage Country";
 
 const capsuleUrl = (appid) =>
-    `https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/header.jpg`;
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appid}/header.jpg`;
 
 // ---------- state ----------
 const branches = Object.keys(CATALOG);
