@@ -14,9 +14,11 @@ const NEIGHBORS = [
     { appid: 2997230, name: "Planet of Lana II",
       img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2997230/7712fdf6cd6531709c16920f8b20b6ee146ac9f8/header.jpg" },
     { appid: 757310,  name: "Sable" },
-    { appid: 1236900, name: "Verdant Village" },  // GUESS — no exact "Verdant" on Steam, fix appid if wrong
+    { appid: 4162340, name: "Verdant",
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4162340/ea7e75f685b5ca4c242b1a14c583354b24c384b9/header.jpg" },
     { appid: 3293010, name: "Easy Delivery Co." },
-    { appid: 1342020, name: "Detour Bus" },       // GUESS — no exact "Detour" on Steam, fix appid if wrong
+    { appid: 4005880, name: "DETOUR",
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4005880/f144126f46c762be8890a21ca61cc74118f85b14/header.jpg" },
     { appid: 3090810, name: "Truckful" },
 ];
 const OUR_NAME = "Garbage Country";
