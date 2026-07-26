@@ -27,6 +27,13 @@ const NEIGHBORS = [
 ];
 const OUR_NAME = "Garbage Country";
 
+// Our row in the LIST view (new-releases style). Tweak freely.
+const OUR_ROW = {
+    tags: ["Open World", "Exploration", "Driving", "Atmospheric"],
+    released: "Coming soon",
+    price: "9,75€",
+};
+
 const capsuleUrl = (appid) =>
     `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appid}/capsule_616x353.jpg`;
 
@@ -34,8 +41,9 @@ const capsuleUrl = (appid) =>
 const branches = Object.keys(CATALOG);
 let branch = branches[0] || null;
 let version = 0;           // 0-based index into CATALOG[branch]
-let view = "full";         // "full" | "store"
+let view = "full";         // "full" | "store" | "list"
 let gridOrder = null;      // shuffled neighbor order + our slot, kept until reshuffle
+let listSlot = null;       // index of our row in the list view
 
 // ---------- els ----------
 const $ = (id) => document.getElementById(id);
@@ -43,10 +51,11 @@ const els = {
     dropdown: $("branch-dropdown"), branchBtn: $("branch-btn"),
     branchLabel: $("branch-label"), branchMenu: $("branch-menu"),
     pips: $("pips"), prev: $("prev-btn"), next: $("next-btn"),
-    btnFull: $("btn-full"), btnStore: $("btn-store"), shuffle: $("shuffle-btn"),
-    fullView: $("full-view"), storeView: $("store-view"),
+    btnFull: $("btn-full"), btnStore: $("btn-store"), btnList: $("btn-list"),
+    shuffle: $("shuffle-btn"),
+    fullView: $("full-view"), storeView: $("store-view"), listView: $("list-view"),
     fullImg: $("full-img"), fullCaption: $("full-caption"),
-    grid: $("grid"), empty: $("empty-state"),
+    grid: $("grid"), rows: $("rows"), empty: $("empty-state"),
 };
 
 const vLabel = (i) => "v" + String(i + 1).padStart(2, "0");
@@ -61,14 +70,14 @@ function readUrl() {
     version = files().length - 1; // default to latest
     const v = parseInt(p.get("v"), 10);
     if (v >= 1 && v <= files().length) version = v - 1;
-    if (p.get("view") === "store") view = "store";
+    if (["store", "list"].includes(p.get("view"))) view = p.get("view");
 }
 
 function writeUrl() {
     const p = new URLSearchParams();
     p.set("b", branch);
     p.set("v", version + 1);
-    if (view === "store") p.set("view", "store");
+    if (view !== "full") p.set("view", view);
     history.replaceState(null, "", "?" + p.toString());
 }
 
@@ -109,12 +118,15 @@ function render() {
     // view toggle
     els.btnFull.classList.toggle("active", view === "full");
     els.btnStore.classList.toggle("active", view === "store");
+    els.btnList.classList.toggle("active", view === "list");
     els.fullView.style.display = view === "full" ? "flex" : "none";
     els.storeView.style.display = view === "store" ? "block" : "none";
-    els.shuffle.style.display = view === "store" ? "flex" : "none";
+    els.listView.style.display = view === "list" ? "block" : "none";
+    els.shuffle.style.display = view === "full" ? "none" : "flex";
 
     if (view === "full") renderFull();
-    else renderStore();
+    else if (view === "store") renderStore();
+    else renderList();
 }
 
 function renderFull() {
@@ -138,6 +150,67 @@ function shuffleGrid() {
     const slot = 1 + Math.floor(Math.random() * (order.length - 1));
     order.splice(slot, 0, { ours: true });
     gridOrder = order;
+}
+
+function renderList() {
+    if (listSlot === null) listSlot = 1 + Math.floor(Math.random() * (STORE_LIST.length - 1));
+    els.rows.innerHTML = "";
+    const entries = STORE_LIST.slice();
+    entries.splice(listSlot, 0, { ours: true });
+    for (const g of entries) {
+        const row = document.createElement("a");
+        row.className = "row";
+
+        const cap = document.createElement("div");
+        cap.className = "row-cap";
+        const img = document.createElement("img");
+        img.loading = "lazy";
+        cap.appendChild(img);
+
+        const mid = document.createElement("div");
+        mid.className = "row-mid";
+        const title = document.createElement("div");
+        title.className = "row-title";
+        const tags = document.createElement("div");
+        tags.className = "row-tags";
+        mid.appendChild(title);
+        mid.appendChild(tags);
+
+        const right = document.createElement("div");
+        right.className = "row-right";
+        const price = document.createElement("div");
+        price.className = "row-price";
+        const released = document.createElement("div");
+        released.className = "row-released";
+        right.appendChild(price);
+        right.appendChild(released);
+
+        const d = g.ours
+            ? { name: OUR_NAME, img: encodeURI(currentFile()), ...OUR_ROW }
+            : g;
+        img.src = d.img;
+        img.alt = d.name;
+        title.textContent = d.name;
+        tags.textContent = (d.tags || []).join(", ");
+        released.textContent = d.released || "";
+        if (d.discount) {
+            price.innerHTML =
+                `<span class="disc">${d.discount}</span>` +
+                `<span class="orig">${d.originalPrice}</span><span>${d.price}</span>`;
+        } else {
+            price.textContent = d.price || "";
+        }
+        if (!g.ours) {
+            row.href = `https://store.steampowered.com/app/${g.appid}/`;
+            row.target = "_blank";
+            row.rel = "noopener";
+        }
+
+        row.appendChild(cap);
+        row.appendChild(mid);
+        row.appendChild(right);
+        els.rows.appendChild(row);
+    }
 }
 
 function renderStore() {
@@ -182,13 +255,18 @@ els.prev.addEventListener("click", () => { if (version > 0) { version--; render(
 els.next.addEventListener("click", () => { if (version < files().length - 1) { version++; render(); } });
 els.btnFull.addEventListener("click", () => { view = "full"; render(); });
 els.btnStore.addEventListener("click", () => { view = "store"; render(); });
-els.shuffle.addEventListener("click", () => { shuffleGrid(); renderStore(); });
+els.btnList.addEventListener("click", () => { view = "list"; render(); });
+els.shuffle.addEventListener("click", () => {
+    if (view === "store") { shuffleGrid(); renderStore(); }
+    else if (view === "list") { listSlot = null; renderList(); }
+});
 
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft" && version > 0) { version--; render(); }
     else if (e.key === "ArrowRight" && version < files().length - 1) { version++; render(); }
     else if (e.key === "f") { view = "full"; render(); }
     else if (e.key === "s") { view = "store"; render(); }
+    else if (e.key === "l") { view = "list"; render(); }
 });
 
 // ---------- init ----------

@@ -33,4 +33,16 @@ https://noio.nl/garbage-country-key-art/?b=Red&v=3&view=store → same, in the s
 Neighbor games are configured at the top of `viewer.js` (`NEIGHBORS`), pulled live
 from the Steam CDN. The grid shows **main capsules** (616×353, as in "your personal
 calendar"), scaled to 375×215 with `object-fit: cover`, so arbitrary-sized key art
-clips/scales the way Steam would show it. Keyboard: ←/→ versions, `f`/`s` views.
+clips/scales the way Steam would show it.
+
+## List preview (small capsule)
+
+The LIST view mimics the homepage "New Releases" tab: 184×69 capsules with title,
+tags, release date and price. Rows come from a snapshot of Steam's actual New
+Releases — refresh it with `python3 update-store-list.py` (regenerates
+`store-list-data.js`), then commit. Our row's tags/date/price live in `OUR_ROW`
+at the top of `viewer.js`; the capsule is whatever branch/version is selected,
+so make a dedicated small-capsule branch (e.g. `Red-SmallCapsule`) for honest
+comparisons.
+
+Keyboard: ←/→ versions, `f`/`s`/`l` views.
