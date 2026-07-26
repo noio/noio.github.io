@@ -9,6 +9,7 @@ const CATALOG = {
     "art/Turquoise/Screenshot 2026-07-26 at 14.19.30 (x2).png"
   ],
   "Turquoise-Small-Capsule": [
-    "art/Turquoise-Small-Capsule/Screenshot 2026-07-26 at 14.35.42.png"
+    "art/Turquoise-Small-Capsule/Screenshot 2026-07-26 at 14.35.42.png",
+    "art/Turquoise-Small-Capsule/Screenshot 2026-07-26 at 14.38.28.png"
   ]
 };
