@@ -41,8 +41,14 @@ The LIST view mimics the homepage "Popular New Releases" tab: 231×87 capsules w
 title, tags, release date and price. Rows come from a snapshot of the actual
 homepage tab — refresh it with `python3 update-store-list.py` (regenerates
 `store-list-data.js`), then commit. Our row's tags/date/price live in `OUR_ROW`
-at the top of `viewer.js`; the capsule is whatever branch/version is selected,
-so make a dedicated small-capsule branch (e.g. `Red-SmallCapsule`) for honest
-comparisons.
+at the top of `viewer.js`; the capsule is whatever branch/version is selected.
+
+## Branch variants
+
+Name folders `<Base> - Main Capsule` / `<Base> - Small Capsule` (exactly that
+format; a folder without a suffix counts as main). Siblings with the same base
+auto-switch: toggling to LIST pulls in the small variant, toggling to STORE
+pulls in the main one, and picking a variant from the dropdown jumps to its
+matching view. Full view never auto-switches.
 
 Keyboard: ←/→ versions, `f`/`s`/`l` views.

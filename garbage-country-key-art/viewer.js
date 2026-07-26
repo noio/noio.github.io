@@ -62,6 +62,48 @@ const vLabel = (i) => "v" + String(i + 1).padStart(2, "0");
 const files = () => (branch ? CATALOG[branch] : []);
 const currentFile = () => files()[version];
 
+// ---------- branch variants ----------
+// Folder naming convention: "Red - Main Capsule" / "Red - Small Capsule".
+// No suffix means the branch holds main-capsule art.
+function parseBranch(name) {
+    const m = name.match(/^(.*) - (Main|Small) Capsule$/);
+    return m ? { base: m[1], variant: m[2].toLowerCase() }
+             : { base: name, variant: "main" };
+}
+
+function findSibling(name, wantVariant) {
+    const base = parseBranch(name).base.toLowerCase();
+    return branches.find((b) => {
+        const p = parseBranch(b);
+        return p.base.toLowerCase() === base && p.variant === wantVariant;
+    }) || null;
+}
+
+// User picked a view: pull in the matching capsule variant if one exists.
+function setView(v) {
+    view = v;
+    const { variant } = parseBranch(branch);
+    const want = v === "list" ? "small" : v === "store" ? "main" : null;
+    if (want && variant !== want) {
+        const sib = findSibling(branch, want);
+        if (sib) {
+            branch = sib;
+            version = CATALOG[sib].length - 1; // versions aren't synced; take latest
+        }
+    }
+    render();
+}
+
+// User picked a branch: jump to the view that variant belongs in.
+function setBranch(b) {
+    branch = b;
+    version = CATALOG[b].length - 1;
+    const { variant } = parseBranch(b);
+    if (view === "list" && variant === "main") view = "store";
+    else if (view === "store" && variant === "small") view = "list";
+    render();
+}
+
 // ---------- url sync ----------
 function readUrl() {
     const p = new URLSearchParams(location.search);
@@ -95,10 +137,8 @@ function render() {
         item.setAttribute("role", "option");
         item.innerHTML = `<span>${b}</span><span class="count">${CATALOG[b].length} version${CATALOG[b].length > 1 ? "s" : ""}</span>`;
         item.addEventListener("click", () => {
-            branch = b;
-            version = files().length - 1;
             els.dropdown.classList.remove("open");
-            render();
+            setBranch(b);
         });
         els.branchMenu.appendChild(item);
     }
@@ -252,9 +292,9 @@ document.addEventListener("click", () => els.dropdown.classList.remove("open"));
 
 els.prev.addEventListener("click", () => { if (version > 0) { version--; render(); } });
 els.next.addEventListener("click", () => { if (version < files().length - 1) { version++; render(); } });
-els.btnFull.addEventListener("click", () => { view = "full"; render(); });
-els.btnStore.addEventListener("click", () => { view = "store"; render(); });
-els.btnList.addEventListener("click", () => { view = "list"; render(); });
+els.btnFull.addEventListener("click", () => setView("full"));
+els.btnStore.addEventListener("click", () => setView("store"));
+els.btnList.addEventListener("click", () => setView("list"));
 els.shuffle.addEventListener("click", () => {
     if (view === "store") { shuffleGrid(); renderStore(); }
     else if (view === "list") { listSlot = null; renderList(); }
@@ -263,9 +303,9 @@ els.shuffle.addEventListener("click", () => {
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft" && version > 0) { version--; render(); }
     else if (e.key === "ArrowRight" && version < files().length - 1) { version++; render(); }
-    else if (e.key === "f") { view = "full"; render(); }
-    else if (e.key === "s") { view = "store"; render(); }
-    else if (e.key === "l") { view = "list"; render(); }
+    else if (e.key === "f") setView("full");
+    else if (e.key === "s") setView("store");
+    else if (e.key === "l") setView("list");
 });
 
 // ---------- init ----------
