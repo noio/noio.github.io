@@ -31,6 +31,6 @@ https://noio.nl/garbage-country-key-art/?b=Red&v=3&view=store → same, in the s
 ## Store preview
 
 Neighbor games are configured at the top of `viewer.js` (`NEIGHBORS`), pulled live
-from the Steam CDN by app id. Capsules render at 375×175 (Steam's header capsule,
-natively 460×215, same aspect) with `object-fit: cover`, so arbitrary-sized key art
+from the Steam CDN. The grid shows **main capsules** (616×353, as in "your personal
+calendar"), scaled to 375×215 with `object-fit: cover`, so arbitrary-sized key art
 clips/scales the way Steam would show it. Keyboard: ←/→ versions, `f`/`s` views.

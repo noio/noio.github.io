@@ -4,30 +4,31 @@
  */
 
 // Neighbor games shown around our key art in the store preview.
-// Capsules are pulled live from the Steam CDN by app id. Newer Steam apps
-// use hashed asset URLs — for those, set an explicit `img` override
-// (grab it from the store page: the big header image URL).
+// MAIN capsules (616×353) pulled live from the Steam CDN — most apps use
+// hashed asset URLs, so each entry pins the exact `img` its store page
+// currently serves (re-grab from the store page if one goes stale).
 const NEIGHBORS = [
     { appid: 1458140, name: "Pacific Drive",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1458140/3a5fa1e845c13b48f9e2ed042f4538ac62bd16ed/header.jpg" },
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1458140/2760a8bda00bf838d5295e9c7e2ad9f64d106e23/capsule_616x353.jpg" },
     { appid: 1562430, name: "DREDGE" },
-    { appid: 2929250, name: "over the hill" },
+    { appid: 2929250, name: "over the hill",
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2929250/c9074a798026361d9c8521ef9a23d6e52c0bea38/capsule_616x353.jpg" },
     { appid: 2997230, name: "Planet of Lana II",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2997230/7712fdf6cd6531709c16920f8b20b6ee146ac9f8/header.jpg" },
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2997230/1d4097479477a29de0b6672df90fbbe86aeeaefc/capsule_616x353.jpg" },
     { appid: 757310,  name: "Sable" },
     { appid: 4162340, name: "Verdant",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4162340/ea7e75f685b5ca4c242b1a14c583354b24c384b9/header.jpg" },
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4162340/4d414f2cd0f872116778c5ee787f0d9034fffe84/capsule_616x353.jpg" },
     { appid: 3293010, name: "Easy Delivery Co.",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3293010/2d0ded07083fd997234193517d5a6c65a1cf7920/header.jpg" },
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3293010/d6c4ab7b057ebf4af98f8ebc5a713590e9da95fa/capsule_616x353.jpg" },
     { appid: 4005880, name: "DETOUR",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4005880/f144126f46c762be8890a21ca61cc74118f85b14/header.jpg" },
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4005880/4b7e56ccc18b4a93acfe0fdcf42221ea9761014a/capsule_616x353.jpg" },
     { appid: 3090810, name: "Truckful",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3090810/84527335c4107d4ad2e459e97f0af3b0343ffbc2/header.jpg" },
+      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3090810/689f586d9d6c5fd442426721d553cd062f0b44d1/capsule_616x353.jpg" },
 ];
 const OUR_NAME = "Garbage Country";
 
 const capsuleUrl = (appid) =>
-    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appid}/header.jpg`;
+    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appid}/capsule_616x353.jpg`;
 
 // ---------- state ----------
 const branches = Object.keys(CATALOG);
