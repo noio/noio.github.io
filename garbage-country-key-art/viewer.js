@@ -52,7 +52,8 @@ const els = {
     branchLabel: $("branch-label"), branchMenu: $("branch-menu"),
     pips: $("pips"), prev: $("prev-btn"), next: $("next-btn"),
     btnFull: $("btn-full"), btnStore: $("btn-store"), btnList: $("btn-list"),
-    shuffle: $("shuffle-btn"),
+    shuffle: $("shuffle-btn"), share: $("share-btn"),
+    shareIconLink: $("share-icon-link"), shareIconCheck: $("share-icon-check"),
     fullView: $("full-view"), storeView: $("store-view"), listView: $("list-view"),
     fullImg: $("full-img"), fullCaption: $("full-caption"),
     grid: $("grid"), rows: $("rows"), empty: $("empty-state"),
@@ -284,6 +285,22 @@ function renderStore() {
 }
 
 // ---------- events ----------
+// Copy a link WITHOUT the v param — it always resolves to the branch's latest.
+els.share.addEventListener("click", () => {
+    const p = new URLSearchParams();
+    p.set("b", branch);
+    if (view !== "full") p.set("view", view);
+    const url = `${location.origin}${location.pathname}?${p.toString()}`;
+    navigator.clipboard.writeText(url).then(() => {
+        els.shareIconLink.style.display = "none";
+        els.shareIconCheck.style.display = "";
+        setTimeout(() => {
+            els.shareIconLink.style.display = "";
+            els.shareIconCheck.style.display = "none";
+        }, 1200);
+    });
+});
+
 els.branchBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     els.dropdown.classList.toggle("open");
