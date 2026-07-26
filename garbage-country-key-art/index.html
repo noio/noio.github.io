@@ -230,19 +230,19 @@
         }
         .capsule-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, 375px);
+            grid-template-columns: repeat(auto-fill, 297px);
             gap: 14px;
             justify-content: center;
             max-width: 1580px;
             margin: 0 auto;
         }
         .capsule {
-            width: 375px;
+            width: 297px;
             text-decoration: none;
         }
         .capsule .img-wrap {
-            width: 375px;
-            height: 215px; /* main capsule 616×353 ratio */
+            width: 297px;
+            height: 170px; /* main capsule 616×353 ratio, 5-up rows */
             overflow: hidden;
             border-radius: 2px;
             background: var(--bg-deep);
@@ -300,8 +300,8 @@
         }
         .row:hover { background: var(--panel); }
         .row-cap {
-            width: 184px;
-            height: 69px;  /* steam homepage tab capsule size */
+            width: 231px;
+            height: 87px;  /* steam homepage tab row capsule size */
             flex-shrink: 0;
             overflow: hidden;
             border-radius: 1px;
@@ -378,7 +378,7 @@
         @media (max-width: 900px) {
             header { gap: 12px; padding: 12px; }
             .brand { display: none; }
-            .capsule-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 375px)); }
+            .capsule-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 297px)); }
             .capsule, .capsule .img-wrap { width: 100%; }
             .capsule .img-wrap { height: auto; aspect-ratio: 616 / 353; }
         }
