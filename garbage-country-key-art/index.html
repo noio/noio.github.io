@@ -288,71 +288,79 @@
             flex-direction: column;
             gap: 3px;
         }
+        /* values lifted from steam's own home.css / main.css (v7) */
         .row {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 6px 10px 6px 6px;
-            background: rgba(0, 0, 0, 0.25);
-            border-radius: 2px;
+            gap: 6px;
+            background: rgba(179, 218, 255, 0.08);   /* --light-ctn-bg */
             text-decoration: none;
-            transition: background 0.12s;
+            transition: background 0.2s ease-in-out;
         }
-        .row:hover { background: var(--panel); }
+        .row:hover { background: rgba(115, 150, 184, 0.25); }  /* --light-ctn-bg-hover */
         .row-cap {
             width: 231px;
             height: 87px;  /* steam homepage tab row capsule size */
             flex-shrink: 0;
             overflow: hidden;
-            border-radius: 1px;
             background: var(--bg-deep);
         }
         .row-cap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .row-mid { flex: 1; min-width: 0; }
-        .row-title {
-            font-size: 14px;
-            color: var(--text);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .row:hover .row-title { color: var(--selected); }
-        .row-tags {
-            margin-top: 4px;
-            font-size: 11px;
-            color: var(--text-dim);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .row-right {
-            text-align: right;
-            flex-shrink: 0;
+        .row-mid {
+            flex: 1;
+            min-width: 0;
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
-            gap: 3px;
+            padding: 8px 10px;
         }
-        .row-price {
-            font-size: 13px;
-            color: var(--text);
+        .row-title {
+            font-size: 16px;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .row-tags {
+            margin-top: 2px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);          /* --light-fg */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .row-released {
+            margin-top: auto;                          /* bottom line, like steam */
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);           /* --midlight-fg */
+        }
+        .row-right {
+            flex-shrink: 0;
+            align-self: center;
+            margin-right: 10px;
+        }
+        .row-price { display: flex; align-items: stretch; }
+        .row-price .disc {
             display: flex;
             align-items: center;
-            gap: 6px;
+            font-weight: bold;
+            color: #000;
+            background: #A1CD44;                       /* --green */
+            font-size: 14px;
+            padding: 0 6px;
+        }
+        .row-price .prices {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            background: rgba(30, 37, 41, 0.8);         /* --price-dark-bg */
+            padding: 8px;
+            gap: 4px;
         }
         .row-price .orig {
+            color: #848e94;
             font-size: 11px;
-            color: var(--text-dim);
             text-decoration: line-through;
         }
-        .row-price .disc {
-            background: #4c6b22;
-            color: #a4d007;
-            font-size: 12px;
-            padding: 1px 4px;
-            border-radius: 1px;
-        }
-        .row-released { font-size: 11px; color: var(--text-dim); }
+        .row-price .final { font-size: 14px; color: #fff; }
 
         @media (max-width: 600px) {
             .row-tags { display: none; }
@@ -440,12 +448,12 @@
     </main>
 
     <main id="store-view">
-        <div class="store-header">Popular Upcoming</div>
+        <div class="store-header">More Like This</div>
         <div class="capsule-grid" id="grid"></div>
     </main>
 
     <main id="list-view">
-        <div class="list-header">New Releases</div>
+        <div class="list-header">Popular New Releases</div>
         <div class="store-rows" id="rows"></div>
     </main>
 

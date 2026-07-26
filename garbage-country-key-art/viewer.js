@@ -30,7 +30,7 @@ const OUR_NAME = "Garbage Country";
 // Our row in the LIST view (new-releases style). Tweak freely.
 const OUR_ROW = {
     tags: ["Open World", "Exploration", "Driving", "Atmospheric"],
-    released: "Coming soon",
+    released: "25 Jul, 2026",
     price: "9,75€",
 };
 
@@ -173,17 +173,17 @@ function renderList() {
         title.className = "row-title";
         const tags = document.createElement("div");
         tags.className = "row-tags";
+        const released = document.createElement("div");
+        released.className = "row-released";
         mid.appendChild(title);
         mid.appendChild(tags);
+        mid.appendChild(released);
 
         const right = document.createElement("div");
         right.className = "row-right";
         const price = document.createElement("div");
         price.className = "row-price";
-        const released = document.createElement("div");
-        released.className = "row-released";
         right.appendChild(price);
-        right.appendChild(released);
 
         const d = g.ours
             ? { name: OUR_NAME, img: encodeURI(currentFile()), ...OUR_ROW }
@@ -192,14 +192,13 @@ function renderList() {
         img.alt = d.name;
         title.textContent = d.name;
         tags.textContent = (d.tags || []).join(", ");
-        released.textContent = d.released || "";
-        if (d.discount) {
-            price.innerHTML =
-                `<span class="disc">${d.discount}</span>` +
-                `<span class="orig">${d.originalPrice}</span><span>${d.price}</span>`;
-        } else {
-            price.textContent = d.price || "";
-        }
+        released.textContent = d.released ? `Released: ${d.released}` : "";
+        const priceHtml = d.discount
+            ? `<div class="disc">${d.discount}</div>` +
+              `<div class="prices"><div class="orig">${d.originalPrice}</div>` +
+              `<div class="final">${d.price}</div></div>`
+            : `<div class="prices"><div class="final">${d.price || ""}</div></div>`;
+        price.innerHTML = priceHtml;
         if (!g.ours) {
             row.href = `https://store.steampowered.com/app/${g.appid}/`;
             row.target = "_blank";
