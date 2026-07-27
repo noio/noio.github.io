@@ -7,6 +7,11 @@ const CATALOG = {
   "Current - Small Capsule": [
     "art/Current - Small Capsule/Steam - Small Capsule.png"
   ],
+  "Orange - Main Capsule": [
+    "art/Orange - Main Capsule/Screenshot 2026-07-27 at 18.17.37 (x2).png",
+    "art/Orange - Main Capsule/Screenshot 2026-07-27 at 18.18.29 (x2).png",
+    "art/Orange - Main Capsule/Screenshot 2026-07-27 at 18.20.34 (x2).png"
+  ],
   "Red - Main Capsule": [
     "art/Red - Main Capsule/Screenshot 2026-07-25 at 12.30.22 (x2).png",
     "art/Red - Main Capsule/Screenshot 2026-07-26 at 15.05.37.png",
