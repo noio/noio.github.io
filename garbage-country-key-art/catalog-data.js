@@ -14,7 +14,8 @@ const CATALOG = {
   ],
   "Orange - Small Capsule": [
     "art/Orange - Small Capsule/Screenshot 2026-07-28 at 12.50.26.png",
-    "art/Orange - Small Capsule/Screenshot 2026-07-28 at 12.54.27.png"
+    "art/Orange - Small Capsule/Screenshot 2026-07-28 at 12.54.27.png",
+    "art/Orange - Small Capsule/Screenshot 2026-07-29 at 15.50.36.png"
   ],
   "Red - Main Capsule": [
     "art/Red - Main Capsule/Screenshot 2026-07-25 at 12.30.22 (x2).png",
