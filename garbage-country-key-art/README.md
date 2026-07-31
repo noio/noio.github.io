@@ -43,12 +43,19 @@ homepage tab — refresh it with `python3 update-store-list.py` (regenerates
 `store-list-data.js`), then commit. Our row's tags/date/price live in `OUR_ROW`
 at the top of `viewer.js`; the capsule is whatever branch/version is selected.
 
+## Vertical preview
+
+The VERT view lines up vertical capsules ("hero capsules", 374×448, shown on
+storefront cluster carousels and sale pages) in a single horizontal row,
+rendered at 300×359. Steam's library grid uses a different 600×900 asset — this
+view previews the store one.
+
 ## Branch variants
 
-Name folders `<Base> - Main Capsule` / `<Base> - Small Capsule` (exactly that
-format; a folder without a suffix counts as main). Siblings with the same base
-auto-switch: toggling to LIST pulls in the small variant, toggling to STORE
-pulls in the main one, and picking a variant from the dropdown jumps to its
-matching view. Full view never auto-switches.
+Name folders `<Base> - Main Capsule` / `<Base> - Small Capsule` /
+`<Base> - Vertical Capsule` (exactly that format; a folder without a suffix
+counts as main). Siblings with the same base auto-switch: toggling to
+LIST/STORE/VERT pulls in the small/main/vertical variant, and picking a variant
+from the dropdown jumps to its matching view. Full view never auto-switches.
 
-Keyboard: ←/→ versions, `f`/`s`/`l` views.
+Keyboard: ←/→ versions, `f`/`s`/`l`/`v` views.

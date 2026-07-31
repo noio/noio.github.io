@@ -3,27 +3,38 @@
  * URL params: ?b=<branch>&v=<num>&view=full|store  e.g. ?b=Red&v=3&view=store
  */
 
-// Neighbor games shown around our key art in the store preview.
-// MAIN capsules (616×353) pulled live from the Steam CDN — most apps use
-// hashed asset URLs, so each entry pins the exact `img` its store page
-// currently serves (re-grab from the store page if one goes stale).
+// Neighbor games shown around our key art in the store previews.
+// `img` = MAIN capsule (616×353), `vert` = VERTICAL capsule (374×448,
+// "hero_capsule"), pulled live from the Steam CDN — most apps use hashed
+// asset URLs, so entries pin the exact URL Steam currently serves
+// (re-grab via IStoreBrowseService/GetItems if one goes stale).
+const CDN = "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps";
 const NEIGHBORS = [
     { appid: 1458140, name: "Pacific Drive",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1458140/2760a8bda00bf838d5295e9c7e2ad9f64d106e23/capsule_616x353.jpg" },
-    { appid: 1562430, name: "DREDGE" },
+      img: `${CDN}/1458140/2760a8bda00bf838d5295e9c7e2ad9f64d106e23/capsule_616x353.jpg`,
+      vert: `${CDN}/1458140/hero_capsule.jpg` },
+    { appid: 1562430, name: "DREDGE",
+      vert: `${CDN}/1562430/hero_capsule.jpg` },
     { appid: 2929250, name: "over the hill",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2929250/c9074a798026361d9c8521ef9a23d6e52c0bea38/capsule_616x353.jpg" },
+      img: `${CDN}/2929250/c9074a798026361d9c8521ef9a23d6e52c0bea38/capsule_616x353.jpg`,
+      vert: `${CDN}/2929250/01fd1019068fd68f8f624b103907997d47731231/hero_capsule.jpg` },
     { appid: 2997230, name: "Planet of Lana II",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2997230/1d4097479477a29de0b6672df90fbbe86aeeaefc/capsule_616x353.jpg" },
-    { appid: 757310,  name: "Sable" },
+      img: `${CDN}/2997230/1d4097479477a29de0b6672df90fbbe86aeeaefc/capsule_616x353.jpg`,
+      vert: `${CDN}/2997230/5df2d158ce4eff1638ffc6a533a2d061f0224b7f/hero_capsule.jpg` },
+    { appid: 757310,  name: "Sable",
+      vert: `${CDN}/757310/hero_capsule.jpg` },
     { appid: 4162340, name: "Verdant",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4162340/4d414f2cd0f872116778c5ee787f0d9034fffe84/capsule_616x353.jpg" },
+      img: `${CDN}/4162340/4d414f2cd0f872116778c5ee787f0d9034fffe84/capsule_616x353.jpg`,
+      vert: `${CDN}/4162340/36b87e9315232754192e28dac2c7e658bc4134cf/hero_capsule.jpg` },
     { appid: 3293010, name: "Easy Delivery Co.",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3293010/d6c4ab7b057ebf4af98f8ebc5a713590e9da95fa/capsule_616x353.jpg" },
+      img: `${CDN}/3293010/d6c4ab7b057ebf4af98f8ebc5a713590e9da95fa/capsule_616x353.jpg`,
+      vert: `${CDN}/3293010/97d1fdf144cc5a3644ee5a28de32599ae43438cf/hero_capsule.jpg` },
     { appid: 4005880, name: "DETOUR",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4005880/4b7e56ccc18b4a93acfe0fdcf42221ea9761014a/capsule_616x353.jpg" },
+      img: `${CDN}/4005880/4b7e56ccc18b4a93acfe0fdcf42221ea9761014a/capsule_616x353.jpg`,
+      vert: `${CDN}/4005880/0b5009696f9a434c9a0a05dab2fee4ce76329974/hero_capsule.jpg` },
     { appid: 3090810, name: "Truckful",
-      img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3090810/689f586d9d6c5fd442426721d553cd062f0b44d1/capsule_616x353.jpg" },
+      img: `${CDN}/3090810/689f586d9d6c5fd442426721d553cd062f0b44d1/capsule_616x353.jpg`,
+      vert: `${CDN}/3090810/hero_capsule.jpg` },
 ];
 const OUR_NAME = "Garbage Country";
 
@@ -34,16 +45,16 @@ const OUR_ROW = {
     price: "9,75€",
 };
 
-const capsuleUrl = (appid) =>
-    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${appid}/capsule_616x353.jpg`;
+const capsuleUrl = (appid) => `${CDN}/${appid}/capsule_616x353.jpg`;
 
 // ---------- state ----------
 const branches = Object.keys(CATALOG);
 let branch = branches[0] || null;
 let version = 0;           // 0-based index into CATALOG[branch]
-let view = "full";         // "full" | "store" | "list"
+let view = "full";         // "full" | "store" | "list" | "vertical"
 let gridOrder = null;      // shuffled neighbor order + our slot, kept until reshuffle
 let listSlot = null;       // index of our row in the list view
+let vertOrder = null;      // shuffled neighbor order + our slot for the vertical row
 
 // ---------- els ----------
 const $ = (id) => document.getElementById(id);
@@ -52,11 +63,13 @@ const els = {
     branchLabel: $("branch-label"), branchMenu: $("branch-menu"),
     pips: $("pips"), prev: $("prev-btn"), next: $("next-btn"),
     btnFull: $("btn-full"), btnStore: $("btn-store"), btnList: $("btn-list"),
+    btnVert: $("btn-vert"),
     shuffle: $("shuffle-btn"), share: $("share-btn"),
     shareIconLink: $("share-icon-link"), shareIconCheck: $("share-icon-check"),
     fullView: $("full-view"), storeView: $("store-view"), listView: $("list-view"),
+    vertView: $("vert-view"),
     fullImg: $("full-img"), fullCaption: $("full-caption"),
-    grid: $("grid"), rows: $("rows"), empty: $("empty-state"),
+    grid: $("grid"), rows: $("rows"), vertRow: $("vert-row"), empty: $("empty-state"),
 };
 
 const vLabel = (i) => "v" + String(i + 1).padStart(2, "0");
@@ -64,10 +77,13 @@ const files = () => (branch ? CATALOG[branch] : []);
 const currentFile = () => files()[version];
 
 // ---------- branch variants ----------
-// Folder naming convention: "Red - Main Capsule" / "Red - Small Capsule".
-// No suffix means the branch holds main-capsule art.
+// Folder naming convention: "<Base> - Main Capsule" / "- Small Capsule" /
+// "- Vertical Capsule". No suffix means the branch holds main-capsule art.
+const VIEW_FOR_VARIANT = { main: "store", small: "list", vertical: "vertical" };
+const VARIANT_FOR_VIEW = { store: "main", list: "small", vertical: "vertical" };
+
 function parseBranch(name) {
-    const m = name.match(/^(.*) - (Main|Small) Capsule$/);
+    const m = name.match(/^(.*) - (Main|Small|Vertical) Capsule$/);
     return m ? { base: m[1], variant: m[2].toLowerCase() }
              : { base: name, variant: "main" };
 }
@@ -84,7 +100,7 @@ function findSibling(name, wantVariant) {
 function setView(v) {
     view = v;
     const { variant } = parseBranch(branch);
-    const want = v === "list" ? "small" : v === "store" ? "main" : null;
+    const want = VARIANT_FOR_VIEW[v] || null;
     if (want && variant !== want) {
         const sib = findSibling(branch, want);
         if (sib) {
@@ -95,13 +111,12 @@ function setView(v) {
     render();
 }
 
-// User picked a branch: jump to the view that variant belongs in.
+// User picked a branch: jump to the view its variant belongs in.
 function setBranch(b) {
     branch = b;
     version = CATALOG[b].length - 1;
-    const { variant } = parseBranch(b);
-    if (view === "list" && variant === "main") view = "store";
-    else if (view === "store" && variant === "small") view = "list";
+    const home = VIEW_FOR_VARIANT[parseBranch(b).variant];
+    if (view !== "full" && view !== home) view = home;
     render();
 }
 
@@ -113,7 +128,7 @@ function readUrl() {
     version = files().length - 1; // default to latest
     const v = parseInt(p.get("v"), 10);
     if (v >= 1 && v <= files().length) version = v - 1;
-    if (["store", "list"].includes(p.get("view"))) view = p.get("view");
+    if (["store", "list", "vertical"].includes(p.get("view"))) view = p.get("view");
 }
 
 function writeUrl() {
@@ -160,14 +175,17 @@ function render() {
     els.btnFull.classList.toggle("active", view === "full");
     els.btnStore.classList.toggle("active", view === "store");
     els.btnList.classList.toggle("active", view === "list");
+    els.btnVert.classList.toggle("active", view === "vertical");
     els.fullView.style.display = view === "full" ? "flex" : "none";
     els.storeView.style.display = view === "store" ? "block" : "none";
     els.listView.style.display = view === "list" ? "block" : "none";
+    els.vertView.style.display = view === "vertical" ? "block" : "none";
     els.shuffle.style.display = view === "full" ? "none" : "flex";
 
     if (view === "full") renderFull();
     else if (view === "store") renderStore();
-    else renderList();
+    else if (view === "list") renderList();
+    else renderVertical();
 }
 
 function renderFull() {
@@ -253,6 +271,45 @@ function renderList() {
     }
 }
 
+function renderVertical() {
+    if (!vertOrder) {
+        const order = NEIGHBORS.filter((n) => n.vert);
+        for (let i = order.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [order[i], order[j]] = [order[j], order[i]];
+        }
+        order.splice(1 + Math.floor(Math.random() * (order.length - 1)), 0, { ours: true });
+        vertOrder = order;
+    }
+    els.vertRow.innerHTML = "";
+    for (const entry of vertOrder) {
+        const cap = document.createElement("a");
+        cap.className = "vcapsule";
+        const wrap = document.createElement("div");
+        wrap.className = "img-wrap";
+        const img = document.createElement("img");
+        img.loading = "lazy";
+        const title = document.createElement("div");
+        title.className = "title";
+        if (entry.ours) {
+            img.src = encodeURI(currentFile());
+            img.alt = OUR_NAME;
+            title.textContent = OUR_NAME;
+        } else {
+            img.src = entry.vert;
+            img.alt = entry.name;
+            title.textContent = entry.name;
+            cap.href = `https://store.steampowered.com/app/${entry.appid}/`;
+            cap.target = "_blank";
+            cap.rel = "noopener";
+        }
+        wrap.appendChild(img);
+        cap.appendChild(wrap);
+        cap.appendChild(title);
+        els.vertRow.appendChild(cap);
+    }
+}
+
 function renderStore() {
     if (!gridOrder) shuffleGrid();
     els.grid.innerHTML = "";
@@ -312,9 +369,11 @@ els.next.addEventListener("click", () => { if (version < files().length - 1) { v
 els.btnFull.addEventListener("click", () => setView("full"));
 els.btnStore.addEventListener("click", () => setView("store"));
 els.btnList.addEventListener("click", () => setView("list"));
+els.btnVert.addEventListener("click", () => setView("vertical"));
 els.shuffle.addEventListener("click", () => {
     if (view === "store") { shuffleGrid(); renderStore(); }
     else if (view === "list") { listSlot = null; renderList(); }
+    else if (view === "vertical") { vertOrder = null; renderVertical(); }
 });
 
 document.addEventListener("keydown", (e) => {
@@ -323,6 +382,7 @@ document.addEventListener("keydown", (e) => {
     else if (e.key === "f") setView("full");
     else if (e.key === "s") setView("store");
     else if (e.key === "l") setView("list");
+    else if (e.key === "v") setView("vertical");
 });
 
 // ---------- init ----------
