@@ -273,12 +273,14 @@ function renderList() {
 
 function renderVertical() {
     if (!vertOrder) {
-        const order = NEIGHBORS.filter((n) => n.vert);
-        for (let i = order.length - 1; i > 0; i--) {
+        // 4 random neighbors, ours dead center
+        const pool = NEIGHBORS.filter((n) => n.vert);
+        for (let i = pool.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [order[i], order[j]] = [order[j], order[i]];
+            [pool[i], pool[j]] = [pool[j], pool[i]];
         }
-        order.splice(1 + Math.floor(Math.random() * (order.length - 1)), 0, { ours: true });
+        const order = pool.slice(0, 4);
+        order.splice(2, 0, { ours: true });
         vertOrder = order;
     }
     els.vertRow.innerHTML = "";
